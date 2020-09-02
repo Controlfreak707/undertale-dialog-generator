@@ -221,7 +221,7 @@ module.exports = class Settings extends React.Component {
       }
     };
     const link = `https://www.demirramon.com/utgen.png?message=mode=${evaluateMode()} box=${evaluateBox()} boxcolor=${evaluateBoxColor()} character=${evaluateCharacter()} expression=${evaluateExpression()} ${
-      getSetting("message") || "Input a message!"
+      getSetting("message", "Input a message!") || "Input a message!"
     }`;
     return (
       <div>
