@@ -91,6 +91,75 @@ module.exports = class Settings extends React.Component {
         case 3:
           return "undertale-flowey";
           break;
+        case 4:
+          return "undertale-toriel";
+          break;
+        case 5:
+          return "undertale-dummy";
+          break;
+        case 6:
+          return "undertale-napstablook";
+          break;
+        case 7:
+          return "undertale-sans";
+          break;
+        case 8:
+          return "undertale-papyrus";
+          break;
+        case 9:
+          return "undertale-grillby";
+          break;
+        case 10:
+          return "undertale-monsterkid";
+          break;
+        case 11:
+          return "undertale-maddummy";
+          break;
+        case 12:
+          return "undertale-undyne";
+          break;
+        case 13:
+          return "undertale-undyne-undying";
+          break;
+        case 14:
+          return "undertale-temmie";
+          break;
+        case 15:
+          return "undertale-alphys";
+          break;
+        case 16:
+          return "undertale-mettaton";
+          break;
+        case 17:
+          return "undertale-muffet";
+          break;
+        case 18:
+          return "undertale-mettaton-ex";
+          break;
+        case 19:
+          return "undertale-mettaton-neo";
+          break;
+        case 20:
+          return "undertale-asgore";
+          break;
+        case 21:
+          return "undertale-omega-flowey";
+          break;
+        case 22:
+          return "undertale-asriel";
+          break;
+        case 23:
+          return "undertale-hyperdeath-asriel";
+          break;
+        case 24:
+          return "undertale-final-form-asriel";
+          break;
+        case 25:
+          return "undertale-chara";
+          break;
+        case 26:
+          return "undertale-gaster";
+          break;
       }
     };
     const evaluateExpression = () => {
@@ -351,6 +420,29 @@ module.exports = class Settings extends React.Component {
                   options={[
                     { label: "Frisk", value: 2 },
                     { label: "Flowey", value: 3 },
+                    { label: "Toriel", value: 4 },
+                    { label: "Training Dummy", value: 5 },
+                    { label: "Napstablook", value: 6 },
+                    { label: "Sans", value: 7 },
+                    { label: "Papyrus", value: 8 },
+                    { label: "Grillby", value: 9 },
+                    { label: "Monster Kid", value: 10 },
+                    { label: "Mad Dummy", value: 11 },
+                    { label: "Undyne", value: 12 },
+                    { label: "Undyne the Undying", value: 13 },
+                    { label: "Temmie", value: 14 },
+                    { label: "Alphys", value: 15 },
+                    { label: "Mettaton", value: 16 },
+                    { label: "Muffet", value: 17 },
+                    { label: "Mettaton EX", value: 18 },
+                    { label: "Mettaton NEO", value: 19 },
+                    { label: "Asgore", value: 20 },
+                    { label: "Omega Flowey", value: 21 },
+                    { label: "Asriel", value: 22 },
+                    { label: "Asriel (God of Hyperdeath)", value: 23 },
+                    { label: "Asriel (Final Form)", value: 24 },
+                    { label: "Chara", value: 25 },
+                    { label: "🕈📬👎📬 ☝✌💧❄☜☼", value: 26 },
                   ]}
                   value={getSetting("character", 2)}
                   onChange={(o) => {
