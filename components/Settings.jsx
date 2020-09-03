@@ -1,11 +1,12 @@
 const { React, getModule } = require("powercord/webpack");
+const { get } = require("powercord/http");
 const { Flex, Card, Text, Divider } = require("powercord/components");
 const {
   SelectInput,
   ButtonItem,
   TextAreaInput,
 } = require("powercord/components/settings");
-const { clipboard } = getModule(["clipboard"], false);
+const { nativeImage, clipboard } = require("electron");
 
 module.exports = class Settings extends React.Component {
   constructor(props) {
@@ -287,11 +288,26 @@ module.exports = class Settings extends React.Component {
         case 40:
           return "frisk";
           break;
+        case 41:
+          return "semi-closed-eyes";
+          break;
+        case 42:
+          return "happy";
+          break;
+        case 43:
+          return "sad-smile";
+          break;
       }
     };
     const link = `https://www.demirramon.com/utgen.png?message=mode=${evaluateMode()} box=${evaluateBox()} boxcolor=${evaluateBoxColor()} character=${evaluateCharacter()} expression=${evaluateExpression()} ${
       getSetting("message", "Input a message!") || "Input a message!"
     }`;
+    const copyImageFromLink = async () => {
+      /*const { body } = await get(link);
+      const image = nativeImage.createFromBuffer(body);
+      clipboard.writeImage(image);*/
+      clipboard.writeText(encodeURI(link));
+    };
     return (
       <div>
         <Card style={{ padding: "18px" }}>
@@ -511,6 +527,64 @@ module.exports = class Settings extends React.Component {
               </div>
             </Flex.Child>
           )}
+          {getSetting("character", 0) == 4 && (
+            <Flex.Child>
+              <div>
+                <SelectInput
+                  options={[
+                    { label: "Default", value: 0 }, //
+                    { label: "Looking Away", value: 2 }, //
+                    { label: "Eyes Semi-Closed", value: 41 }, //
+                    { label: "Eyes Closed", value: 4 }, //
+                    { label: "Happy", value: 42 }, //
+                    { label: "Sad Smile", value: 43 }, //
+                    { label: "Sad", value: 6 },
+                    { label: "Eyes Semi-Closed, Sad", value: 7 },
+                    { label: "Eyes Closed, Sad", value: 8 },
+                    { label: "Eyes Closed, Sad 2", value: 9 },
+                    { label: "Eyes Closed, Sad 3", value: 10 },
+                    { label: "Eyes Closed, Sad 4", value: 11 },
+                    { label: "Eyes Closed, Sad 5", value: 12 },
+                    { label: "Eyes Closed, Sad 6", value: 13 },
+                    { label: "Looking Away, Sad", value: 14 },
+                    { label: "Looking Away, Sad 2", value: 15 },
+                    { label: "Eyes Closed, Smiling, Sad", value: 16 },
+                    { label: "Blushing", value: 17 },
+                    { label: "Surprised", value: 18 },
+                    { label: "Shocked", value: 19 },
+                    { label: "Crazy 1", value: 20 },
+                    { label: "Crazy 2", value: 21 },
+                    { label: "Crazy 3", value: 22 },
+                    { label: "Eyes Semi-Closed, Happy", value: 23 },
+                    { label: "Disbelief", value: 24 },
+                    { label: "Disbelief, Looking Away", value: 25 },
+                    { label: "Incredulous", value: 26 },
+                    { label: "Incredulous, Looking Away", value: 27 },
+                    { label: "Annoyed", value: 28 },
+                    { label: "Annoyed 2", value: 29 },
+                    { label: "Serious", value: 30 },
+                    { label: "Serious, Talking", value: 31 },
+                    { label: "Serious, Looking Away", value: 32 },
+                    { label: "Pissed", value: 33 },
+                    { label: "Glasses", value: 34 },
+                    { label: "Glasses, Happy", value: 35 },
+                    { label: "Glasses, Eyes Semi-Closed", value: 36 },
+                    { label: "Glasses, Looking Away", value: 37 },
+                    { label: "Glasses, Pissed", value: 38 },
+                    { label: "Hurt", value: 39 },
+                    { label: "Hurt, Laughing", value: 40 },
+                    { label: "What", value: 41 },
+                    { label: "What, Funny", value: 42 },
+                    { label: "Uhhh", value: 43 },
+                  ]}
+                  value={getSetting("expression", 0)}
+                  onChange={(o) => updateSetting("expression", o.value)}
+                >
+                  Expression
+                </SelectInput>
+              </div>
+            </Flex.Child>
+          )}
         </Flex>
         <TextAreaInput
           value={getSetting("message")}
@@ -521,7 +595,7 @@ module.exports = class Settings extends React.Component {
         </TextAreaInput>
         <ButtonItem
           onClick={() => {
-            clipboard.copy(encodeURI(link));
+            copyImageFromLink();
           }}
           note="Copy the image link to send to your friends."
           button="Copy"
