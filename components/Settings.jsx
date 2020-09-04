@@ -87,78 +87,81 @@ module.exports = class Settings extends React.Component {
           return "empty";
           break;
         case 2:
-          return "undertale-frisk";
+          return "custom";
           break;
         case 3:
-          return "undertale-flowey";
+          return "undertale-frisk";
           break;
         case 4:
-          return "undertale-toriel";
+          return "undertale-flowey";
           break;
         case 5:
-          return "undertale-dummy";
+          return "undertale-toriel";
           break;
         case 6:
-          return "undertale-napstablook";
+          return "undertale-dummy";
           break;
         case 7:
-          return "undertale-sans";
+          return "undertale-napstablook";
           break;
         case 8:
-          return "undertale-papyrus";
+          return "undertale-sans";
           break;
         case 9:
-          return "undertale-grillby";
+          return "undertale-papyrus";
           break;
         case 10:
-          return "undertale-monsterkid";
+          return "undertale-grillby";
           break;
         case 11:
-          return "undertale-maddummy";
+          return "undertale-monsterkid";
           break;
         case 12:
-          return "undertale-undyne";
+          return "undertale-maddummy";
           break;
         case 13:
-          return "undertale-undyne-undying";
+          return "undertale-undyne";
           break;
         case 14:
-          return "undertale-temmie";
+          return "undertale-undyne-undying";
           break;
         case 15:
-          return "undertale-alphys";
+          return "undertale-temmie";
           break;
         case 16:
-          return "undertale-mettaton";
+          return "undertale-alphys";
           break;
         case 17:
-          return "undertale-muffet";
+          return "undertale-mettaton";
           break;
         case 18:
-          return "undertale-mettaton-ex";
+          return "undertale-muffet";
           break;
         case 19:
-          return "undertale-mettaton-neo";
+          return "undertale-mettaton-ex";
           break;
         case 20:
-          return "undertale-asgore";
+          return "undertale-mettaton-neo";
           break;
         case 21:
-          return "undertale-omega-flowey";
+          return "undertale-asgore";
           break;
         case 22:
-          return "undertale-asriel";
+          return "undertale-omega-flowey";
           break;
         case 23:
-          return "undertale-hyperdeath-asriel";
+          return "undertale-asriel";
           break;
         case 24:
-          return "undertale-final-form-asriel";
+          return "undertale-hyperdeath-asriel";
           break;
         case 25:
-          return "undertale-chara";
+          return "undertale-final-form-asriel";
           break;
         case 26:
+          return "undertale-chara";
+          break;
+        case 27:
           return "undertale-gaster";
           break;
       }
@@ -299,14 +302,16 @@ module.exports = class Settings extends React.Component {
           break;
       }
     };
-    const link = `https://www.demirramon.com/utgen.png?message=mode=${evaluateMode()} box=${evaluateBox()} boxcolor=${evaluateBoxColor()} character=${evaluateCharacter()} expression=${evaluateExpression()} ${
+    const link = `https://www.demirramon.com/utgen.png?text=${encodeURIComponent(
       getSetting("message", "Input a message!") || "Input a message!"
-    }`;
+    )}&box=${evaluateBox()}&boxcolor=${evaluateBoxColor()}&character=${evaluateCharacter()}&expression=${evaluateExpression()}&url=${encodeURIComponent(
+      getSetting("url", "")
+    )}&mode=${evaluateMode()}`;
     const copyImageFromLink = async () => {
       /*const { body } = await get(link);
       const image = nativeImage.createFromBuffer(body);
       clipboard.writeImage(image);*/
-      clipboard.writeText(encodeURI(link));
+      clipboard.writeText(link);
     };
     return (
       <div>
@@ -417,6 +422,7 @@ module.exports = class Settings extends React.Component {
                       value: 0,
                     },
                     { label: "Empty Space", value: 1 },
+                    { label: "Use URL", value: 2 },
                   ]}
                   value={getSetting("character", 0)}
                   onChange={(o) => {
@@ -434,33 +440,33 @@ module.exports = class Settings extends React.Component {
               <div>
                 <SelectInput
                   options={[
-                    { label: "Frisk", value: 2 },
-                    { label: "Flowey", value: 3 },
-                    { label: "Toriel", value: 4 },
-                    { label: "Training Dummy", value: 5 },
-                    { label: "Napstablook", value: 6 },
-                    { label: "Sans", value: 7 },
-                    { label: "Papyrus", value: 8 },
-                    { label: "Grillby", value: 9 },
-                    { label: "Monster Kid", value: 10 },
-                    { label: "Mad Dummy", value: 11 },
-                    { label: "Undyne", value: 12 },
-                    { label: "Undyne the Undying", value: 13 },
-                    { label: "Temmie", value: 14 },
-                    { label: "Alphys", value: 15 },
-                    { label: "Mettaton", value: 16 },
-                    { label: "Muffet", value: 17 },
-                    { label: "Mettaton EX", value: 18 },
-                    { label: "Mettaton NEO", value: 19 },
-                    { label: "Asgore", value: 20 },
-                    { label: "Omega Flowey", value: 21 },
-                    { label: "Asriel", value: 22 },
-                    { label: "Asriel (God of Hyperdeath)", value: 23 },
-                    { label: "Asriel (Final Form)", value: 24 },
-                    { label: "Chara", value: 25 },
-                    { label: "🕈📬👎📬 ☝✌💧❄☜☼", value: 26 },
+                    { label: "Frisk", value: 3 },
+                    { label: "Flowey", value: 4 },
+                    { label: "Toriel", value: 5 },
+                    { label: "Training Dummy", value: 6 },
+                    { label: "Napstablook", value: 7 },
+                    { label: "Sans", value: 8 },
+                    { label: "Papyrus", value: 9 },
+                    { label: "Grillby", value: 10 },
+                    { label: "Monster Kid", value: 11 },
+                    { label: "Mad Dummy", value: 12 },
+                    { label: "Undyne", value: 13 },
+                    { label: "Undyne the Undying", value: 14 },
+                    { label: "Temmie", value: 15 },
+                    { label: "Alphys", value: 16 },
+                    { label: "Mettaton", value: 17 },
+                    { label: "Muffet", value: 18 },
+                    { label: "Mettaton EX", value: 19 },
+                    { label: "Mettaton NEO", value: 20 },
+                    { label: "Asgore", value: 21 },
+                    { label: "Omega Flowey", value: 22 },
+                    { label: "Asriel", value: 23 },
+                    { label: "Asriel (God of Hyperdeath)", value: 24 },
+                    { label: "Asriel (Final Form)", value: 25 },
+                    { label: "Chara", value: 26 },
+                    { label: "🕈📬👎📬 ☝✌💧❄☜☼", value: 27 },
                   ]}
-                  value={getSetting("character", 2)}
+                  value={getSetting("character", 3)}
                   onChange={(o) => {
                     updateSetting("character", o.value);
                     updateSetting("expression", 0);
@@ -472,7 +478,7 @@ module.exports = class Settings extends React.Component {
             </Flex.Child>
           )}
           {/* EXPRESSIONS */}
-          {getSetting("character", 0) == 3 && (
+          {getSetting("character", 0) == 4 && (
             <Flex.Child>
               <div>
                 <SelectInput
@@ -527,7 +533,7 @@ module.exports = class Settings extends React.Component {
               </div>
             </Flex.Child>
           )}
-          {getSetting("character", 0) == 4 && (
+          {getSetting("character", 0) == 5 && (
             <Flex.Child>
               <div>
                 <SelectInput
@@ -586,8 +592,17 @@ module.exports = class Settings extends React.Component {
             </Flex.Child>
           )}
         </Flex>
+        {getSetting("character", 0) == 2 && (
+          <TextAreaInput
+            value={getSetting("url", "")}
+            onChange={(o) => updateSetting("url", o.toString())}
+            rows={1}
+          >
+            URL
+          </TextAreaInput>
+        )}
         <TextAreaInput
-          value={getSetting("message")}
+          value={getSetting("message", "")}
           onChange={(o) => updateSetting("message", o.toString())}
           rows={3}
         >
