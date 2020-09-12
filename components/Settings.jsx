@@ -7,7 +7,6 @@ const {
   Divider,
   FormNotice,
 } = require("powercord/components");
-const Info = require("powercord/components/Icons/Info");
 const {
   SelectInput,
   ButtonItem,
@@ -323,22 +322,19 @@ module.exports = class Settings extends React.Component {
     return (
       <div>
         <FormNotice
-          type={FormNotice.Types["WARNING"]}
+          imageData={{
+            width: 60,
+            height: 60,
+            src: "/assets/0694f38cb0b10cc3b5b89366a0893768.svg",
+          }}
+          type={FormNotice.Types.WARNING}
+          title="Please note:"
           body={
-            <div
-              style={
-                ({ display: "table-cell" },
-                { verticalAlign: "middle" },
-                { textAlign: "center" })
-              }
-            >
-              <Info width="35" height="35" />
-              <br />
-              Please note: This plugin is currently{" "}
-              <strong style={{ color: "red" }}>very</strong> unfinished.
-              <br />
-              Expect unavailable features and bugs.
-            </div>
+            <>
+              This plugin is currently <b>very</b> unfinished. Expect
+              unavailable features and bugs. While options may appear, most of
+              them are not yet functional.
+            </>
           }
         />
         <div style={{ marginBottom: 20 }} />
