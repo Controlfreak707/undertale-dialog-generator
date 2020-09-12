@@ -1,6 +1,13 @@
 const { React, getModule } = require("powercord/webpack");
 const { get } = require("powercord/http");
-const { Flex, Card, Text, Divider } = require("powercord/components");
+const {
+  Flex,
+  Card,
+  Text,
+  Divider,
+  FormNotice,
+} = require("powercord/components");
+const Info = require("powercord/components/Icons/Info");
 const {
   SelectInput,
   ButtonItem,
@@ -315,6 +322,26 @@ module.exports = class Settings extends React.Component {
     };
     return (
       <div>
+        <FormNotice
+          type={FormNotice.Types["WARNING"]}
+          body={
+            <div
+              style={
+                ({ display: "table-cell" },
+                { verticalAlign: "middle" },
+                { textAlign: "center" })
+              }
+            >
+              <Info width="35" height="35" />
+              <br />
+              Please note: This plugin is currently{" "}
+              <strong style={{ color: "red" }}>very</strong> unfinished.
+              <br />
+              Expect unavailable features and bugs.
+            </div>
+          }
+        />
+        <div style={{ marginBottom: 20 }} />
         <Card style={{ padding: "18px" }}>
           <Text>
             This plugin is inspired by{" "}
