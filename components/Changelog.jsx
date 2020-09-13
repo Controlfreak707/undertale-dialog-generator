@@ -38,12 +38,12 @@ module.exports = () => (
       <h1 class="progress-YsDrV- title-18Xx5z">FIXES AND UPDATES </h1>
       <ul>
         <li>
-          <strong>Reduced code significantly!</strong> The main plugin file was
-          originally 647 lines, but now it's 455!
-        </li>
-        <li>
           <strong>Posted the plugin on to the Powercord server.</strong> Hey
           there all you new comers! I hope you like the plugin so far!
+        </li>
+        <li>
+          <strong>Added a command!</strong> Now you can create undertale
+          dialogue just by saying ".undertale"! (Requested by snapperito#0001.)
         </li>
       </ul>
       <div

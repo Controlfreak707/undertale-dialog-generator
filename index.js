@@ -18,9 +18,39 @@ module.exports = class UndertaleDialogGenerator extends Plugin {
       open(() => React.createElement(Changelog));
     }
     this.settings.set("version", manifest.version);
+
+    powercord.api.commands.registerCommand({
+      command: "undertale",
+      description:
+        "Generates Undertale dialogue based off of your current settings.",
+      usage: "{c} [ ...arguments ]",
+      executor: (args) => ({
+        send: true,
+        result: `https://www.demirramon.com/utgen.png?text=${encodeURIComponent(
+          args.join(" ") ||
+            this.settings.get("message", "Input a message!") ||
+            "Input a message!"
+        )}&box=${this.settings.get(
+          "box",
+          "undertale"
+        )}&boxcolor=${this.settings.get(
+          "boxcolor",
+          "white"
+        )}&character=${this.settings.get(
+          "character",
+          ""
+        )}&expression=${this.settings.get(
+          "expression",
+          "default"
+        )}&url=${encodeURIComponent(
+          this.settings.get("url", "")
+        )}&mode=${this.settings.get("mode", "")}`,
+      }),
+    });
   }
 
   pluginWillUnload() {
+    powercord.api.commands.unregisterCommand("undertale");
     powercord.api.settings.unregisterSettings("undertale-dialog-generator");
   }
 };

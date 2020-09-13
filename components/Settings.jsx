@@ -113,13 +113,19 @@ module.exports = class Settings extends React.Component {
     ];
     const link = `https://www.demirramon.com/utgen.png?text=${encodeURIComponent(
       getSetting("message", "Input a message!") || "Input a message!"
-    )}&box=${boxes[getSetting("box", 0)]}&boxcolor=${
-      boxColors[getSetting("boxcolor", 0)]
-    }&character=${characters[getSetting("character", 0)]}&expression=${
-      expressions[getSetting("expression", 0)]
-    }&url=${encodeURIComponent(getSetting("url", ""))}&mode=${
-      modes[getSetting("mode", 0)]
-    }`;
+    )}&box=${getSetting("box", boxes[0])}&boxcolor=${getSetting(
+      "boxcolor",
+      boxColors[0]
+    )}&character=${getSetting(
+      "character",
+      characters[0]
+    )}&expression=${getSetting(
+      "expression",
+      expressions[0]
+    )}&url=${encodeURIComponent(getSetting("url", ""))}&mode=${getSetting(
+      "mode",
+      modes[0]
+    )}`;
     const copyImageFromLink = async () => {
       /*const { body } = await get(link);
       const image = nativeImage.createFromBuffer(body);
@@ -140,7 +146,8 @@ module.exports = class Settings extends React.Component {
             <>
               This plugin is currently <b>very</b> unfinished. Expect
               unavailable features and bugs. While options may appear, most of
-              them are not yet functional.
+              them are not yet functional. However, don't let that discurage you
+              from reporting bugs to me!
             </>
           }
         />
@@ -167,8 +174,8 @@ module.exports = class Settings extends React.Component {
                   { label: "Regular", value: 0 },
                   { label: "Dark World (Deltarune)", value: 1 },
                 ]}
-                value={getSetting("mode", 0)}
-                onChange={(o) => updateSetting("mode", o.value)}
+                value={getSetting("mode", modes[0])}
+                onChange={(o) => updateSetting("mode", modes[o.value])}
               >
                 Mode
               </SelectInput>
@@ -189,8 +196,8 @@ module.exports = class Settings extends React.Component {
                   { label: "FNAStale", value: 8 },
                   { label: "Derp", value: 9 },
                 ]}
-                value={getSetting("box", 0)}
-                onChange={(o) => updateSetting("box", o.value)}
+                value={getSetting("box", boxes[0])}
+                onChange={(o) => updateSetting("box", boxes[o.value])}
               >
                 Text Box
               </SelectInput>
@@ -206,8 +213,8 @@ module.exports = class Settings extends React.Component {
                   { label: "Yellow", value: 3 },
                   { label: "Lime", value: 4 },
                 ]}
-                value={getSetting("boxcolor", 0)}
-                onChange={(o) => updateSetting("boxcolor", o.value)}
+                value={getSetting("boxcolor", boxColors[0])}
+                onChange={(o) => updateSetting("boxcolor", boxColors[o.value])}
               >
                 Box Color
               </SelectInput>
@@ -254,10 +261,10 @@ module.exports = class Settings extends React.Component {
                     { label: "Empty Space", value: 1 },
                     { label: "Use URL", value: 2 },
                   ]}
-                  value={getSetting("character", 0)}
+                  value={getSetting("character", characters[0])}
                   onChange={(o) => {
-                    updateSetting("character", o.value);
-                    updateSetting("expression", 0);
+                    updateSetting("character", characters[o.value]);
+                    updateSetting("expression", expressions[0]);
                   }}
                 >
                   Character
@@ -296,10 +303,10 @@ module.exports = class Settings extends React.Component {
                     { label: "Chara", value: 26 },
                     { label: "🕈📬👎📬 ☝✌💧❄☜☼", value: 27 },
                   ]}
-                  value={getSetting("character", 3)}
+                  value={getSetting("character", characters[3])}
                   onChange={(o) => {
-                    updateSetting("character", o.value);
-                    updateSetting("expression", 0);
+                    updateSetting("character", characters[o.value]);
+                    updateSetting("expression", expressions[0]);
                   }}
                 >
                   Character
@@ -308,7 +315,7 @@ module.exports = class Settings extends React.Component {
             </Flex.Child>
           )}
           {/* EXPRESSIONS */}
-          {getSetting("character", 0) == 4 && (
+          {getSetting("character", characters[0]) == characters[4] && (
             <Flex.Child>
               <div>
                 <SelectInput
@@ -355,15 +362,17 @@ module.exports = class Settings extends React.Component {
                     { label: "Crying Asriel Face", value: 39 },
                     { label: "Frisk Face", value: 40 },
                   ]}
-                  value={getSetting("expression", 0)}
-                  onChange={(o) => updateSetting("expression", o.value)}
+                  value={getSetting("expression", expressions[0])}
+                  onChange={(o) =>
+                    updateSetting("expression", expressions[o.value])
+                  }
                 >
                   Expression
                 </SelectInput>
               </div>
             </Flex.Child>
           )}
-          {getSetting("character", 0) == 5 && (
+          {getSetting("character", characters[0]) == characters[5] && (
             <Flex.Child>
               <div>
                 <SelectInput
@@ -413,8 +422,10 @@ module.exports = class Settings extends React.Component {
                     { label: "What, Funny", value: 42 },
                     { label: "Uhhh", value: 43 },
                   ]}
-                  value={getSetting("expression", 0)}
-                  onChange={(o) => updateSetting("expression", o.value)}
+                  value={getSetting("expression", expressions[0])}
+                  onChange={(o) =>
+                    updateSetting("expression", expressions[o.value])
+                  }
                 >
                   Expression
                 </SelectInput>
@@ -422,7 +433,7 @@ module.exports = class Settings extends React.Component {
             </Flex.Child>
           )}
         </Flex>
-        {getSetting("character", 0) == 2 && (
+        {getSetting("character", characters[0]) == characters[2] && (
           <TextAreaInput
             value={getSetting("url", "")}
             onChange={(o) => updateSetting("url", o.toString())}
