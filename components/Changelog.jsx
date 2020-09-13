@@ -49,6 +49,9 @@ module.exports = () => (
           <strong>Fixed options not reading properly.</strong> Sorry about your
           settings disappearing! 😬
         </li>
+        <li>
+          <strong>Made command usage more understandable.</strong> Just that.
+        </li>
       </ul>
       <div
         aria-hidden="true"

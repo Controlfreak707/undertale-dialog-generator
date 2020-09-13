@@ -23,7 +23,7 @@ module.exports = class UndertaleDialogGenerator extends Plugin {
       command: "undertale",
       description:
         "Generates Undertale dialogue based off of your current settings.",
-      usage: "{c} [ ...arguments ]",
+      usage: "{c} <dialogue>",
       executor: (args) => ({
         send: true,
         result: `https://www.demirramon.com/utgen.png?text=${encodeURIComponent(
