@@ -38,11 +38,12 @@ module.exports = () => (
       <h1 class="progress-YsDrV- title-18Xx5z">FIXES AND UPDATES </h1>
       <ul>
         <li>
-          <strong>There's a changelog now!</strong> Incase you couldn't tell...
+          <strong>Reduced code significantly!</strong> The main plugin file was
+          originally 647 lines, but now it's 455!
         </li>
         <li>
-          <strong>Adjusted the warning.</strong> It REALLY didn't look too hot
-          before, but it's much better now!
+          <strong>Posted the plugin on to the Powercord server.</strong> Hey
+          there all you new comers! I hope you like the plugin so far!
         </li>
       </ul>
       <div

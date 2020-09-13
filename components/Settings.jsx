@@ -21,298 +21,105 @@ module.exports = class Settings extends React.Component {
 
   render() {
     const { getSetting, updateSetting, toggleSetting } = this.props;
-    const evaluateMode = () => {
-      switch (getSetting("mode", 0)) {
-        case 0:
-          return "";
-          break;
-        case 1:
-          return "darkworld";
-          break;
-      }
-    };
-    const evaluateBox = () => {
-      switch (getSetting("box", 0)) {
-        case 0:
-          return "undertale";
-          break;
-        case 1:
-          return "deltarune";
-          break;
-        case 2:
-          return "earthbound";
-          break;
-        case 3:
-          return "underswap";
-          break;
-        case 4:
-          return "underfell";
-          break;
-        case 5:
-          return "octagonal";
-          break;
-        case 6:
-          return "shadedground";
-          break;
-        case 7:
-          return "tubertale";
-          break;
-        case 8:
-          return "fnastale";
-          break;
-        case 9:
-          return "derp";
-          break;
-      }
-    };
-    const evaluateBoxColor = () => {
-      switch (getSetting("boxcolor", 0)) {
-        case 0:
-          return "white";
-          break;
-        case 1:
-          return "red";
-          break;
-        case 2:
-          return "orange";
-          break;
-        case 3:
-          return "yellow";
-          break;
-        case 4:
-          return "lime";
-          break;
-      }
-    };
-    const evaluateCharacter = () => {
-      switch (getSetting("character", 0)) {
-        case 0:
-          return "";
-          break;
-        case 1:
-          return "empty";
-          break;
-        case 2:
-          return "custom";
-          break;
-        case 3:
-          return "undertale-frisk";
-          break;
-        case 4:
-          return "undertale-flowey";
-          break;
-        case 5:
-          return "undertale-toriel";
-          break;
-        case 6:
-          return "undertale-dummy";
-          break;
-        case 7:
-          return "undertale-napstablook";
-          break;
-        case 8:
-          return "undertale-sans";
-          break;
-        case 9:
-          return "undertale-papyrus";
-          break;
-        case 10:
-          return "undertale-grillby";
-          break;
-        case 11:
-          return "undertale-monsterkid";
-          break;
-        case 12:
-          return "undertale-maddummy";
-          break;
-        case 13:
-          return "undertale-undyne";
-          break;
-        case 14:
-          return "undertale-undyne-undying";
-          break;
-        case 15:
-          return "undertale-temmie";
-          break;
-        case 16:
-          return "undertale-alphys";
-          break;
-        case 17:
-          return "undertale-mettaton";
-          break;
-        case 18:
-          return "undertale-muffet";
-          break;
-        case 19:
-          return "undertale-mettaton-ex";
-          break;
-        case 20:
-          return "undertale-mettaton-neo";
-          break;
-        case 21:
-          return "undertale-asgore";
-          break;
-        case 22:
-          return "undertale-omega-flowey";
-          break;
-        case 23:
-          return "undertale-asriel";
-          break;
-        case 24:
-          return "undertale-hyperdeath-asriel";
-          break;
-        case 25:
-          return "undertale-final-form-asriel";
-          break;
-        case 26:
-          return "undertale-chara";
-          break;
-        case 27:
-          return "undertale-gaster";
-          break;
-      }
-    };
-    const evaluateExpression = () => {
-      switch (getSetting("expression", 0)) {
-        case 0:
-          return "default";
-          break;
-        case 1:
-          return "wink";
-          break;
-        case 2:
-          return "looking-away";
-          break;
-        case 3:
-          return "raised-eyebrows";
-          break;
-        case 4:
-          return "closed-eyes";
-          break;
-        case 5:
-          return "sassy";
-          break;
-        case 6:
-          return "mad";
-          break;
-        case 7:
-          return "angry";
-          break;
-        case 8:
-          return "angry2";
-          break;
-        case 9:
-          return "evil";
-          break;
-        case 10:
-          return "grin";
-          break;
-        case 11:
-          return "laugh";
-          break;
-        case 12:
-          return "jaws";
-          break;
-        case 13:
-          return "skull";
-          break;
-        case 14:
-          return "shocked";
-          break;
-        case 15:
-          return "shocked2";
-          break;
-        case 16:
-          return "disappointed";
-          break;
-        case 17:
-          return "hurt";
-          break;
-        case 18:
-          return "hurt2";
-          break;
-        case 19:
-          return "scared";
-          break;
-        case 20:
-          return "sweat";
-          break;
-        case 21:
-          return "terrified";
-          break;
-        case 22:
-          return "sad";
-          break;
-        case 23:
-          return "sad-looking-away";
-          break;
-        case 24:
-          return "sad-looking-down";
-          break;
-        case 25:
-          return "sad-closed-eyes";
-          break;
-        case 26:
-          return "wilted";
-          break;
-        case 27:
-          return "wilted-stand-up";
-          break;
-        case 28:
-          return "crazy";
-          break;
-        case 29:
-          return "empty";
-          break;
-        case 30:
-          return "cool";
-          break;
-        case 31:
-          return "cute";
-          break;
-        case 32:
-          return "googly-eyes";
-          break;
-        case 33:
-          return "money";
-          break;
-        case 34:
-          return "toriel";
-          break;
-        case 35:
-          return "toriel-creepy";
-          break;
-        case 36:
-          return "asgore";
-          break;
-        case 37:
-          return "asgore-creepy";
-          break;
-        case 38:
-          return "asriel";
-          break;
-        case 39:
-          return "asriel-crying";
-          break;
-        case 40:
-          return "frisk";
-          break;
-        case 41:
-          return "semi-closed-eyes";
-          break;
-        case 42:
-          return "happy";
-          break;
-        case 43:
-          return "sad-smile";
-          break;
-      }
-    };
+    const modes = ["", "darkworld"];
+    const boxes = [
+      "undertale",
+      "deltarune",
+      "earthbound",
+      "underswap",
+      "underfell",
+      "octagonal",
+      "shadedground",
+      "tubertale",
+      "fnastale",
+      "derp",
+    ];
+    const boxColors = ["white", "red", "orange", "yellow", "lime"];
+    const characters = [
+      "",
+      "empty",
+      "custom",
+      "undertale-frisk",
+      "undertale-flowey",
+      "undertale-toriel",
+      "undertale-dummy",
+      "undertale-napstablook",
+      "undertale-sans",
+      "undertale-papyrus",
+      "undertale-grillby",
+      "undertale-monsterkid",
+      "undertale-maddummy",
+      "undertale-undyne",
+      "undertale-undyne-undying",
+      "undertale-temmie",
+      "undertale-alphys",
+      "undertale-mettaton",
+      "undertale-muffet",
+      "undertale-mettaton-ex",
+      "undertale-mettaton-neo",
+      "undertale-asgore",
+      "undertale-omega-flowey",
+      "undertale-asriel",
+      "undertale-hyperdeath-asriel",
+      "undertale-final-form-asriel",
+      "undertale-chara",
+      "undertale-gaster",
+    ];
+    const expressions = [
+      "default",
+      "wink",
+      "looking-away",
+      "raised-eyebrows",
+      "closed-eyes",
+      "sassy",
+      "mad",
+      "angry",
+      "angry2",
+      "evil",
+      "grin",
+      "laugh",
+      "jaws",
+      "skull",
+      "shocked",
+      "shocked2",
+      "disappointed",
+      "hurt",
+      "hurt2",
+      "scared",
+      "sweat",
+      "terrified",
+      "sad",
+      "sad-looking-away",
+      "sad-looking-down",
+      "sad-closed-eyes",
+      "wilted",
+      "wilted-stand-up",
+      "crazy",
+      "empty",
+      "cool",
+      "cute",
+      "googly-eyes",
+      "money",
+      "toriel",
+      "toriel-creepy",
+      "asgore",
+      "asgore-creepy",
+      "asriel",
+      "asriel-crying",
+      "frisk",
+      "semi-closed-eyes",
+      "happy",
+      "sad-smile",
+    ];
     const link = `https://www.demirramon.com/utgen.png?text=${encodeURIComponent(
       getSetting("message", "Input a message!") || "Input a message!"
-    )}&box=${evaluateBox()}&boxcolor=${evaluateBoxColor()}&character=${evaluateCharacter()}&expression=${evaluateExpression()}&url=${encodeURIComponent(
-      getSetting("url", "")
-    )}&mode=${evaluateMode()}`;
+    )}&box=${boxes[getSetting("box", 0)]}&boxcolor=${
+      boxColors[getSetting("boxcolor", 0)]
+    }&character=${characters[getSetting("character", 0)]}&expression=${
+      expressions[getSetting("expression", 0)]
+    }&url=${encodeURIComponent(getSetting("url", ""))}&mode=${
+      modes[getSetting("mode", 0)]
+    }`;
     const copyImageFromLink = async () => {
       /*const { body } = await get(link);
       const image = nativeImage.createFromBuffer(body);
