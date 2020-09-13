@@ -174,7 +174,7 @@ module.exports = class Settings extends React.Component {
                   { label: "Regular", value: 0 },
                   { label: "Dark World (Deltarune)", value: 1 },
                 ]}
-                value={getSetting("mode", modes[0])}
+                value={modes.indexOf(getSetting("mode", modes[0]))}
                 onChange={(o) => updateSetting("mode", modes[o.value])}
               >
                 Mode
@@ -196,7 +196,7 @@ module.exports = class Settings extends React.Component {
                   { label: "FNAStale", value: 8 },
                   { label: "Derp", value: 9 },
                 ]}
-                value={getSetting("box", boxes[0])}
+                value={boxes.indexOf(getSetting("box", boxes[0]))}
                 onChange={(o) => updateSetting("box", boxes[o.value])}
               >
                 Text Box
@@ -213,7 +213,7 @@ module.exports = class Settings extends React.Component {
                   { label: "Yellow", value: 3 },
                   { label: "Lime", value: 4 },
                 ]}
-                value={getSetting("boxcolor", boxColors[0])}
+                value={boxColors.indexOf(getSetting("boxcolor", boxColors[0]))}
                 onChange={(o) => updateSetting("boxcolor", boxColors[o.value])}
               >
                 Box Color
@@ -261,7 +261,9 @@ module.exports = class Settings extends React.Component {
                     { label: "Empty Space", value: 1 },
                     { label: "Use URL", value: 2 },
                   ]}
-                  value={getSetting("character", characters[0])}
+                  value={characters.indexOf(
+                    getSetting("character", characters[0])
+                  )}
                   onChange={(o) => {
                     updateSetting("character", characters[o.value]);
                     updateSetting("expression", expressions[0]);
@@ -362,7 +364,9 @@ module.exports = class Settings extends React.Component {
                     { label: "Crying Asriel Face", value: 39 },
                     { label: "Frisk Face", value: 40 },
                   ]}
-                  value={getSetting("expression", expressions[0])}
+                  value={expressions.indexOf(
+                    getSetting("expression", expressions[0])
+                  )}
                   onChange={(o) =>
                     updateSetting("expression", expressions[o.value])
                   }
@@ -422,7 +426,9 @@ module.exports = class Settings extends React.Component {
                     { label: "What, Funny", value: 42 },
                     { label: "Uhhh", value: 43 },
                   ]}
-                  value={getSetting("expression", expressions[0])}
+                  value={expressions.indexOf(
+                    getSetting("expression", expressions[0])
+                  )}
                   onChange={(o) =>
                     updateSetting("expression", expressions[o.value])
                   }

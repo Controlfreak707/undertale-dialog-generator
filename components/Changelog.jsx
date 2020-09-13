@@ -45,6 +45,10 @@ module.exports = () => (
           <strong>Added a command!</strong> Now you can create undertale
           dialogue just by saying ".undertale"! (Requested by snapperito#0001.)
         </li>
+        <li>
+          <strong>Fixed options not reading properly.</strong> Sorry about your
+          settings disappearing! 😬
+        </li>
       </ul>
       <div
         aria-hidden="true"
