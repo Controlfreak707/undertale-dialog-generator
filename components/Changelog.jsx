@@ -38,19 +38,12 @@ module.exports = () => (
       <h1 class="progress-YsDrV- title-18Xx5z">FIXES AND UPDATES </h1>
       <ul>
         <li>
-          <strong>Posted the plugin on to the Powercord server.</strong> Hey
-          there all you new comers! I hope you like the plugin so far!
+          <strong>Started work on an easier generator button!</strong> It
+          appears next to the emoji button.
         </li>
         <li>
-          <strong>Added a command!</strong> Now you can create undertale
-          dialogue just by saying ".undertale"! (Requested by snapperito#0001.)
-        </li>
-        <li>
-          <strong>Fixed options not reading properly.</strong> Sorry about your
-          settings disappearing! 😬
-        </li>
-        <li>
-          <strong>Made command usage more understandable.</strong> Just that.
+          <strong>Made changelog toggle-able!</strong> While the changelog's
+          really cool, I understand it can get a bit annoying at times...
         </li>
       </ul>
       <div

@@ -11,7 +11,10 @@ const {
   SelectInput,
   ButtonItem,
   TextAreaInput,
+  SwitchItem,
 } = require("powercord/components/settings");
+const { open } = require("powercord/modal");
+const Changelog = require("./Changelog");
 const { nativeImage, clipboard } = require("electron");
 
 module.exports = class Settings extends React.Component {
@@ -166,6 +169,22 @@ module.exports = class Settings extends React.Component {
         </Card>
         <Divider />
         <div style={{ marginBottom: 20 }} />
+        <SwitchItem
+          note="Display changelog on startup?"
+          value={getSetting("displayChangelog", true)}
+          onChange={() => toggleSetting("displayChangelog")}
+        >
+          Changelog
+        </SwitchItem>
+        <ButtonItem
+          onClick={() => {
+            open(() => React.createElement(Changelog));
+          }}
+          note="Shows the changes in the latest update."
+          button="Changelog"
+        >
+          Open Changelog
+        </ButtonItem>
         <Flex>
           <Flex.Child>
             <div>
