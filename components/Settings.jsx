@@ -159,7 +159,10 @@ module.exports = class Settings extends React.Component {
           <Text>
             This plugin is inspired by{" "}
             <b>
-              <a href="https://github.com/powercord-community/suggestions/issues/94">
+              <a
+                href="https://github.com/powercord-community/suggestions/issues/94"
+                target="_blank"
+              >
                 this suggestion
               </a>
             </b>
@@ -324,7 +327,9 @@ module.exports = class Settings extends React.Component {
                     { label: "Chara", value: 26 },
                     { label: "🕈📬👎📬 ☝✌💧❄☜☼", value: 27 },
                   ]}
-                  value={getSetting("character", characters[3])}
+                  value={characters.indexOf(
+                    getSetting("character", characters[3])
+                  )}
                   onChange={(o) => {
                     updateSetting("character", characters[o.value]);
                     updateSetting("expression", expressions[0]);

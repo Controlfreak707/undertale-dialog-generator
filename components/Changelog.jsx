@@ -11,7 +11,7 @@ module.exports = () => (
       <Flex.Child>
         <FormTitle tag="h4">Undertale Dialog Generator v{version}</FormTitle>
         <div class="colorStandard-2KCXvj size12-3cLvbJ date-1k6kG2">
-          13 September 2020
+          18 September 2020
         </div>
       </Flex.Child>
       <Flex.Child>
@@ -38,12 +38,12 @@ module.exports = () => (
       <h1 class="progress-YsDrV- title-18Xx5z">FIXES AND UPDATES </h1>
       <ul>
         <li>
-          <strong>Started work on an easier generator button!</strong> It
-          appears next to the emoji button.
+          <b>More pogress on that button!</b> You can't see it yet though...
+          it's not quite ready yet!
         </li>
         <li>
-          <strong>Made changelog toggle-able!</strong> While the changelog's
-          really cool, I understand it can get a bit annoying at times...
+          <b>Fixed "Character" option not showing it's value.</b> I somehow
+          overlooked this bug for several updates, why did no one say anything!?
         </li>
       </ul>
       <div
