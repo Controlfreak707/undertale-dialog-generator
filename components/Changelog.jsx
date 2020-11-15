@@ -11,7 +11,7 @@ module.exports = () => (
       <Flex.Child>
         <FormTitle tag="h4">Undertale Dialog Generator</FormTitle>
         <div class="colorStandard-2KCXvj size12-3cLvbJ date-1k6kG2">
-          14 November 2020
+          15 November 2020
         </div>
       </Flex.Child>
       <Flex.Child>
@@ -42,16 +42,30 @@ module.exports = () => (
       <h1 class="progress-YsDrV- title-18Xx5z">FIXES AND UPDATES </h1>
       <ul>
         <li>
-          <b>Updated the changelog a bit.</b> Now, the changelog has an image, a
-          footer, and is overall more accurate to the official Discord
-          changelog!
+          <b>Moved the generator over to the button!</b> Finally! Now you can
+          generate Undertale dialog without needing to go into your User
+          Settings!
         </li>
         <li>
-          <b>Fixed empty parameters messing things up.</b> Apparently, the
-          reason why the image didn't always get loaded was because of empty
-          parameters...
+          <b>Made Undertale button more accurate.</b> Mostly just internal
+          stuff, the only thing you'll notice is that now the button gets
+          brighter when hovered over.
         </li>
       </ul>
+      <h1 class="fixed-3zCC84 title-18Xx5z">PLEASE NOTE </h1>
+      <br />
+      <Text>
+        With these changes will likely be some bugs, please report them to me!
+        You can do this by either pinging me in the #plugin-support channel,
+        DMing me, or{" "}
+        <a
+          href="https://github.com/Controlfreak707/undertale-dialog-generator/issues/new"
+          target="_blank"
+        >
+          filing an issue on the repository
+        </a>
+        . Thank you!
+      </Text>
     </div>
     <Modal.Footer direction="horizontal-1ae9ci horizontal-2EEEnY flex-1O1GKY directionRow-3v3tfG">
       <div className="footer-SqIiQ_">

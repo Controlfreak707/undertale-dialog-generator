@@ -14,7 +14,7 @@ const manifest = require("./manifest.json");
 
 const { open } = require("powercord/modal");
 const Changelog = require("./components/Changelog");
-const Modal = require("./components/Modal");
+const GeneratorModal = require("./components/GeneratorModal");
 const Button = require("./components/Button");
 
 module.exports = class UndertaleDialogGenerator extends Plugin {
@@ -87,7 +87,7 @@ module.exports = class UndertaleDialogGenerator extends Plugin {
               className: ".undertale-dialog-generator-button",
               onClick: () =>
                 open(() =>
-                  React.createElement(Modal, {
+                  React.createElement(GeneratorModal, {
                     settings: settings,
                   })
                 ),
