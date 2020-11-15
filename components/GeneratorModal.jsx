@@ -38,7 +38,8 @@ class GeneratorModal extends React.Component {
           ? "&character=" + getSetting("character", characters[0])
           : ""
       }&expression=${getSetting("expression", expressions[0])}${
-        getSetting("url", "") != ""
+        getSetting("url", "") != "" &&
+        getSetting("character", characters[0]) == "custom"
           ? "&url=" + encodeURIComponent(getSetting("url", ""))
           : ""
       }${

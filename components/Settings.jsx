@@ -42,8 +42,9 @@ module.exports = class Settings extends React.Component {
                 this suggestion
               </a>
             </b>
-            . I know it's not exactly the same, but I'm still pretty new to
-            Powercord plugins. I hope you like the plugin anyway!
+            . I know it's not exactly the same, but I'm still working on it.
+            (This is actually harder than I thought it would be...) I hope you
+            like the plugin anyway!
           </Text>
         </Card>
         <Divider />

@@ -51,6 +51,16 @@ module.exports = () => (
           stuff, the only thing you'll notice is that now the button gets
           brighter when hovered over.
         </li>
+        <li>
+          <b>Fixed custom images causing links to break.</b> Now unfortunately,
+          some custom images simply won't work and there's not much I can do
+          about it, however I am able to stop those from effecting the link when
+          not in use!
+        </li>
+        <li>
+          <b>Changed card message in settings.</b> I can't really say I'm new to
+          plugins now, can I...?
+        </li>
       </ul>
       <h1 class="fixed-3zCC84 title-18Xx5z">PLEASE NOTE </h1>
       <br />
