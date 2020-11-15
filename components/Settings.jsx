@@ -119,16 +119,19 @@ module.exports = class Settings extends React.Component {
     )}&box=${getSetting("box", boxes[0])}&boxcolor=${getSetting(
       "boxcolor",
       boxColors[0]
-    )}&character=${getSetting(
-      "character",
-      characters[0]
-    )}&expression=${getSetting(
-      "expression",
-      expressions[0]
-    )}&url=${encodeURIComponent(getSetting("url", ""))}&mode=${getSetting(
-      "mode",
-      modes[0]
-    )}`;
+    )}${
+      getSetting("character", characters[0]) != ""
+        ? "&character=" + getSetting("character", characters[0])
+        : ""
+    }&expression=${getSetting("expression", expressions[0])}${
+      getSetting("url", "") != ""
+        ? "&url=" + encodeURIComponent(getSetting("url", ""))
+        : ""
+    }${
+      getSetting("mode", modes[0]) != ""
+        ? "&mode=" + getSetting("mode", modes[0])
+        : ""
+    }`;
     const copyImageFromLink = async () => {
       /*const { body } = await get(link);
       const image = nativeImage.createFromBuffer(body);
