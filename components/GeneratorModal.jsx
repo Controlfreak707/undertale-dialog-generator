@@ -225,7 +225,7 @@ class GeneratorModal extends React.Component {
               </Flex.Child>
             )}
             {/* EXPRESSIONS */}
-            {getSetting("character", characters[0]) == characters[4] && (
+            {getSetting("character", characters[0]) == "undertale-flowey" && (
               <Flex.Child>
                 <div>
                   <SelectInput
@@ -285,55 +285,298 @@ class GeneratorModal extends React.Component {
                 </div>
               </Flex.Child>
             )}
-            {getSetting("character", characters[0]) == characters[5] && (
+            {getSetting("character", characters[0]) == "undertale-toriel" && (
               <Flex.Child>
                 <div>
                   <SelectInput
                     options={[
-                      { label: "Default", value: 0 }, //
-                      { label: "Looking Away", value: 2 }, //
-                      { label: "Eyes Semi-Closed", value: 41 }, //
-                      { label: "Eyes Closed", value: 4 }, //
-                      { label: "Happy", value: 42 }, //
-                      { label: "Sad Smile", value: 43 }, //
-                      { label: "Sad", value: 6 },
-                      { label: "Eyes Semi-Closed, Sad", value: 7 },
-                      { label: "Eyes Closed, Sad", value: 8 },
-                      { label: "Eyes Closed, Sad 2", value: 9 },
-                      { label: "Eyes Closed, Sad 3", value: 10 },
-                      { label: "Eyes Closed, Sad 4", value: 11 },
-                      { label: "Eyes Closed, Sad 5", value: 12 },
-                      { label: "Eyes Closed, Sad 6", value: 13 },
-                      { label: "Looking Away, Sad", value: 14 },
-                      { label: "Looking Away, Sad 2", value: 15 },
-                      { label: "Eyes Closed, Smiling, Sad", value: 16 },
-                      { label: "Blushing", value: 17 },
-                      { label: "Surprised", value: 18 },
-                      { label: "Shocked", value: 19 },
-                      { label: "Crazy 1", value: 20 },
-                      { label: "Crazy 2", value: 21 },
-                      { label: "Crazy 3", value: 22 },
-                      { label: "Eyes Semi-Closed, Happy", value: 23 },
-                      { label: "Disbelief", value: 24 },
-                      { label: "Disbelief, Looking Away", value: 25 },
-                      { label: "Incredulous", value: 26 },
-                      { label: "Incredulous, Looking Away", value: 27 },
-                      { label: "Annoyed", value: 28 },
-                      { label: "Annoyed 2", value: 29 },
-                      { label: "Serious", value: 30 },
-                      { label: "Serious, Talking", value: 31 },
-                      { label: "Serious, Looking Away", value: 32 },
-                      { label: "Pissed", value: 33 },
-                      { label: "Glasses", value: 34 },
-                      { label: "Glasses, Happy", value: 35 },
-                      { label: "Glasses, Eyes Semi-Closed", value: 36 },
-                      { label: "Glasses, Looking Away", value: 37 },
-                      { label: "Glasses, Pissed", value: 38 },
-                      { label: "Hurt", value: 39 },
-                      { label: "Hurt, Laughing", value: 40 },
-                      { label: "What", value: 41 },
-                      { label: "What, Funny", value: 42 },
-                      { label: "Uhhh", value: 43 },
+                      { label: "Default", value: 0 },
+                      { label: "Looking Away", value: 2 },
+                      { label: "Eyes Semi-Closed", value: 41 },
+                      { label: "Eyes Closed", value: 4 },
+                      { label: "Happy", value: 42 },
+                      { label: "Sad Smile", value: 43 },
+                      { label: "Sad", value: 22 },
+                      { label: "Eyes Semi-Closed, Sad", value: 44 },
+                      { label: "Eyes Closed, Sad", value: 45 },
+                      { label: "Eyes Closed, Sad 2", value: 46 },
+                      { label: "Eyes Closed, Sad 3", value: 47 },
+                      { label: "Eyes Closed, Sad 4", value: 48 },
+                      { label: "Eyes Closed, Sad 5", value: 49 },
+                      { label: "Eyes Closed, Sad 6", value: 50 },
+                      { label: "Looking Away, Sad", value: 23 },
+                      { label: "Looking Away, Sad 2", value: 51 },
+                      { label: "Eyes Closed, Smiling, Sad", value: 52 },
+                      { label: "Blushing", value: 53 },
+                      { label: "Surprised", value: 54 },
+                      { label: "Shocked", value: 14 },
+                      { label: "Crazy 1", value: 28 },
+                      { label: "Crazy 2", value: 55 },
+                      { label: "Crazy 3", value: 56 },
+                      { label: "Eyes Semi-Closed, Happy", value: 57 },
+                      { label: "Eyes Closed, Happy", value: 58 },
+                      { label: "Disbelief", value: 59 },
+                      { label: "Disbelief, Looking Away", value: 60 },
+                      { label: "Incredulous", value: 61 },
+                      { label: "Incredulous, Looking Away", value: 62 },
+                      { label: "Annoyed", value: 63 },
+                      { label: "Annoyed 2", value: 64 },
+                      { label: "Serious", value: 65 },
+                      { label: "Serious, Talking", value: 66 },
+                      { label: "Serious, Looking Away", value: 67 },
+                      { label: "Pissed", value: 68 },
+                      { label: "Glasses", value: 69 },
+                      { label: "Glasses, Happy", value: 70 },
+                      { label: "Glasses, Eyes Semi-Closed", value: 71 },
+                      { label: "Glasses, Looking Away", value: 72 },
+                      { label: "Glasses, Eyes Closed", value: 73 },
+                      { label: "Glasses, Pissed", value: 74 },
+                      { label: "Hurt", value: 17 },
+                      { label: "Hurt, Laughing", value: 75 },
+                      { label: "What", value: 76 },
+                      { label: "What, Funny", value: 77 },
+                      { label: "Uhhh", value: 78 },
+                    ]}
+                    value={expressions.indexOf(
+                      getSetting("expression", expressions[0])
+                    )}
+                    onChange={(o) => {
+                      updateSetting("expression", expressions[o.value]);
+                      this.setState({ updater: !this.state.updater });
+                    }}
+                  >
+                    Expression
+                  </SelectInput>
+                </div>
+              </Flex.Child>
+            )}
+            {getSetting("character", characters[0]) ==
+              "undertale-napstablook" && (
+              <Flex.Child>
+                <div>
+                  <SelectInput
+                    options={[
+                      { label: "Default", value: 0 },
+                      { label: "Looking Away", value: 2 },
+                      { label: "Dapperblook", value: 79 },
+                      { label: "Headset", value: 80 },
+                    ]}
+                    value={expressions.indexOf(
+                      getSetting("expression", expressions[0])
+                    )}
+                    onChange={(o) => {
+                      updateSetting("expression", expressions[o.value]);
+                      this.setState({ updater: !this.state.updater });
+                    }}
+                  >
+                    Expression
+                  </SelectInput>
+                </div>
+              </Flex.Child>
+            )}
+            {getSetting("character", characters[0]) == "undertale-sans" && (
+              <Flex.Child>
+                <div>
+                  <SelectInput
+                    options={[
+                      { label: "Default", value: 0 },
+                      { label: "Looking Away", value: 2 },
+                      { label: "Funny", value: 81 },
+                      { label: "Winking", value: 1 },
+                      { label: "Eyes Semi-Closed", value: 41 },
+                      { label: "Eyes Closed", value: 4 },
+                      { label: "Black Eyes", value: 82 },
+                      { label: "Confused", value: 83 },
+                      { label: "Looking Down", value: 84 },
+                      { label: "Blue Eye", value: 85 },
+                      { label: "Yellow Eye", value: 86 },
+                      { label: "Hit", value: 87 },
+                      { label: "Bleeding, Default", value: 88 },
+                      { label: "Bleeding, Funny", value: 89 },
+                      { label: "Bleeding, Eyes Closed", value: 90 },
+                      { label: "Bleeding, Winking", value: 91 },
+                      { label: "Bleeding, Confused", value: 92 },
+                      { label: "Bleeding, Looking Down", value: 93 },
+                    ]}
+                    value={expressions.indexOf(
+                      getSetting("expression", expressions[0])
+                    )}
+                    onChange={(o) => {
+                      updateSetting("expression", expressions[o.value]);
+                      this.setState({ updater: !this.state.updater });
+                    }}
+                  >
+                    Expression
+                  </SelectInput>
+                </div>
+              </Flex.Child>
+            )}
+            {getSetting("character", characters[0]) == "undertale-papyrus" && (
+              <Flex.Child>
+                <div>
+                  <SelectInput
+                    options={[
+                      { label: "Default", value: 0 },
+                      { label: "Laughing", value: 11 },
+                      { label: "Looking Away", value: 2 },
+                      { label: "Mad", value: 6 },
+                      { label: "Googly Eyes", value: 32 },
+                      { label: "Crying", value: 94 },
+                      { label: "Evil", value: 9 },
+                      { label: "Sweating", value: 20 },
+                      { label: "Worried", value: 95 },
+                      { label: "Cool Dude", value: 30 },
+                    ]}
+                    value={expressions.indexOf(
+                      getSetting("expression", expressions[0])
+                    )}
+                    onChange={(o) => {
+                      updateSetting("expression", expressions[o.value]);
+                      this.setState({ updater: !this.state.updater });
+                    }}
+                  >
+                    Expression
+                  </SelectInput>
+                </div>
+              </Flex.Child>
+            )}
+            {getSetting("character", characters[0]) ==
+              "undertale-monsterkid" && (
+              <Flex.Child>
+                <div>
+                  <SelectInput
+                    options={[
+                      { label: "Default", value: 0 },
+                      { label: "Angry", value: 7 },
+                      { label: "Sad", value: 22 },
+                      { label: "Worried", value: 95 },
+                      { label: "Shocked", value: 14 },
+                      { label: "Terrified", value: 21 },
+                    ]}
+                    value={expressions.indexOf(
+                      getSetting("expression", expressions[0])
+                    )}
+                    onChange={(o) => {
+                      updateSetting("expression", expressions[o.value]);
+                      this.setState({ updater: !this.state.updater });
+                    }}
+                  >
+                    Expression
+                  </SelectInput>
+                </div>
+              </Flex.Child>
+            )}
+            {getSetting("character", characters[0]) == "undertale-maddummy" && (
+              <Flex.Child>
+                <div>
+                  <SelectInput
+                    options={[
+                      { label: "Default", value: 0 },
+                      { label: "Shocked", value: 14 },
+                      { label: "Hurt", value: 17 },
+                      { label: "Sweating", value: 20 },
+                    ]}
+                    value={expressions.indexOf(
+                      getSetting("expression", expressions[0])
+                    )}
+                    onChange={(o) => {
+                      updateSetting("expression", expressions[o.value]);
+                      this.setState({ updater: !this.state.updater });
+                    }}
+                  >
+                    Expression
+                  </SelectInput>
+                </div>
+              </Flex.Child>
+            )}
+            {getSetting("character", characters[0]) == "undertale-temmie" && (
+              <Flex.Child>
+                <div>
+                  <SelectInput
+                    options={[
+                      { label: "Default", value: 0 },
+                      { label: "Hurt", value: 17 },
+                      { label: "No Food", value: 96 },
+                    ]}
+                    value={expressions.indexOf(
+                      getSetting("expression", expressions[0])
+                    )}
+                    onChange={(o) => {
+                      updateSetting("expression", expressions[o.value]);
+                      this.setState({ updater: !this.state.updater });
+                    }}
+                  >
+                    Expression
+                  </SelectInput>
+                </div>
+              </Flex.Child>
+            )}
+            {getSetting("character", characters[0]) == "undertale-muffet" && (
+              <Flex.Child>
+                <div>
+                  <SelectInput
+                    options={[
+                      { label: "Default", value: 0 },
+                      { label: "Angry", value: 7 },
+                      { label: "Money", value: 33 },
+                      { label: "Spider", value: 97 },
+                    ]}
+                    value={expressions.indexOf(
+                      getSetting("expression", expressions[0])
+                    )}
+                    onChange={(o) => {
+                      updateSetting("expression", expressions[o.value]);
+                      this.setState({ updater: !this.state.updater });
+                    }}
+                  >
+                    Expression
+                  </SelectInput>
+                </div>
+              </Flex.Child>
+            )}
+            {getSetting("character", characters[0]) ==
+              "undertale-omega-flowey" && (
+              <Flex.Child>
+                <div>
+                  <SelectInput
+                    options={[
+                      { label: "Default", value: 0 },
+                      { label: "Looking Away", value: 2 },
+                      { label: "Funny", value: 81 },
+                      { label: "Spooky", value: 98 },
+                      { label: "Dark Screen", value: 99 },
+                      { label: "Flowey", value: 100 },
+                      { label: "Static", value: 101 },
+                      { label: "Monster", value: 102 },
+                      { label: "Human", value: 103 },
+                      { label: "Everyone", value: 104 },
+                      { label: "Smile", value: 105 },
+                      { label: "Troll Face", value: 106 },
+                    ]}
+                    value={expressions.indexOf(
+                      getSetting("expression", expressions[0])
+                    )}
+                    onChange={(o) => {
+                      updateSetting("expression", expressions[o.value]);
+                      this.setState({ updater: !this.state.updater });
+                    }}
+                  >
+                    Expression
+                  </SelectInput>
+                </div>
+              </Flex.Child>
+            )}
+            {getSetting("character", characters[0]) == "undertale-gaster" && (
+              <Flex.Child>
+                <div>
+                  <SelectInput
+                    options={[
+                      { label: "Default", value: 0 },
+                      { label: "Creepy", value: 107 },
+                      { label: "Sad", value: 22 },
+                      { label: "Funny", value: 81 },
+                      { label: "Apathetic", value: 108 },
+                      { label: "Glowing Eyes", value: 109 },
                     ]}
                     value={expressions.indexOf(
                       getSetting("expression", expressions[0])

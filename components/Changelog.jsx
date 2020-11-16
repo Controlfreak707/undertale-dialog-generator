@@ -27,55 +27,58 @@ module.exports = () => (
         class="image-2WjK2f"
         src={`https://www.demirramon.com/utgen.png?text=Here's%20what's%20new%20in%20color%3Dred%20Undertale%20Dialog%20Generator%20color%3Dwhite%20v${version}%3A&box=undertale&boxcolor=white&character=custom&expression=default&url=https%3A%2F%2Fi.imgur.com%2FthiTjiZ.png`}
       ></img>
-      {/*<h1 class="added-2hLRj3 title-18Xx5z marginTop-2incQ6">
+      <h1 class="added-2hLRj3 title-18Xx5z marginTop-2incQ6">
         NEW CHARACTERS{" "}
       </h1>
       <ul>
         <li>
-          <strong>Added Chara.</strong> Chara is now here complete with her
-          terrifying expressions!
+          <strong>Completed Toriel!</strong> I had just barely started adding
+          Toriel last time I worked on characters, but now she's done!
         </li>
         <li>
-          <strong>Added Sans.</strong> He really should've already been added...
+          <strong>Added Napstablook's expressions.</strong> All Undertale
+          characters, such as Napstablook, have been added, their expressions
+          have not all been added yet, however.
         </li>
-</ul>*/}
-      <h1 class="progress-YsDrV- title-18Xx5z">FIXES AND UPDATES </h1>
+        <li>
+          <strong>Added Sans' expressions.</strong> The funniest skeleton in
+          Snowdin!
+        </li>
+        <li>
+          <strong>Added Papyrus's expressions.</strong> The very famous royal
+          guardsman! (Note: not yet a very famous royal guardsman.)
+        </li>
+        <li>
+          <strong>Added Moster Kid's expressions.</strong> Better now than never
+          I guess...
+        </li>
+        <li>
+          <strong>Added Mad Dummy's expressions.</strong> Fools, FOOLS, FOOLS!
+        </li>
+        <li>
+          <strong>Added Temmie's expressions.</strong> hOi, am tem! cOm to tEm
+          shoP, yA?
+        </li>
+        <li>
+          <strong>Added Muffet's expressions.</strong> Would you care for a
+          pastry? Ahuhuhu~
+        </li>
+        <li>
+          <strong>Added Omega Flowey's expressions.</strong> Your best
+          nightmare!
+        </li>
+        <li>
+          <strong>Added 🕈📬👎📬 ☝✌💧❄☜☼'s expressions.</strong> Who...?
+        </li>
+      </ul>
+      {/*<h1 class="progress-YsDrV- title-18Xx5z">FIXES AND UPDATES </h1>
       <ul>
         <li>
           <b>Moved the generator over to the button!</b> Finally! Now you can
           generate Undertale dialog without needing to go into your User
           Settings!
         </li>
-        <li>
-          <b>Made Undertale button more accurate.</b> Mostly just internal
-          stuff, the only thing you'll notice is that now the button gets
-          brighter when hovered over.
-        </li>
-        <li>
-          <b>Fixed custom images causing links to break.</b> Now unfortunately,
-          some custom images simply won't work and there's not much I can do
-          about it, however I am able to stop those from effecting the link when
-          not in use!
-        </li>
-        <li>
-          <b>Changed card message in settings.</b> I can't really say I'm new to
-          plugins now, can I...?
-        </li>
-      </ul>
-      <h1 class="fixed-3zCC84 title-18Xx5z">PLEASE NOTE </h1>
-      <br />
-      <Text>
-        With these changes will likely be some bugs, please report them to me!
-        You can do this by either pinging me in the #plugin-support channel,
-        DMing me, or{" "}
-        <a
-          href="https://github.com/Controlfreak707/undertale-dialog-generator/issues/new"
-          target="_blank"
-        >
-          filing an issue on the repository
-        </a>
-        . Thank you!
-      </Text>
+</ul>*/}
     </div>
     <Modal.Footer direction="horizontal-1ae9ci horizontal-2EEEnY flex-1O1GKY directionRow-3v3tfG">
       <div className="footer-SqIiQ_">
