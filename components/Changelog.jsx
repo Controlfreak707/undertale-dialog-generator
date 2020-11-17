@@ -32,59 +32,21 @@ module.exports = () => (
       </h1>
       <ul>
         <li>
-          <strong>ALL UNDERTALE CHARACTERS ARE COMPLETE!</strong> Yup! All
-          characters from the original undertale have been added and their
-          expressions have been completed! Any characters that don't have
-          multiple expressions unfortunately will never get expressions.
+          <strong>Added Best Boi.</strong> Uh- don't worry about that, I just
+          added 'em because I was bored when developing this...
         </li>
         <li>
-          <strong>Added Undyne's Expressions.</strong>{" "}
-          "NGAAAAAHHHHHHHHHHHHHHHHH!"
-        </li>
-        <li>
-          <strong>Added Undyne The Undying's Expressions.</strong> "You're gonna
-          have to try a little harder than THAT."
-        </li>
-        <li>
-          <strong>Added Alphys's Expressions.</strong> "Ummm... H-h-hiya!"
-        </li>
-        <li>
-          <strong>Added Mettaton's Expressions.</strong> "I'M NOT GOING TO
-          DESTROY YOU WITHOUT A LIVE TELEVISION AUDIENCE!!"
-        </li>
-        <li>
-          <strong>Added Mettaton EX's Expressions.</strong> "Oh, yes~!"
-        </li>
-        <li>
-          <strong>Added Mettaton NEO's Expressions.</strong> Just Mettaton EX
-          but spikier... I don't think they even have any unique quotes.
-        </li>
-        <li>
-          <strong>Added Asgore's Expressions.</strong> "Would you care for a cup
-          of tea?"
-        </li>
-        <li>
-          <strong>Added Asriel's Expressions.</strong> "It's me, your best
-          friend."
-        </li>
-        <li>
-          <strong>Added God of Hyperdeath Asriel's Expressions.</strong>{" "}
-          "Legendary being made of every SOUL in the Underground. The Absolute
-          GOD of Hyperdeath!"
-        </li>
-        <li>
-          <strong>Added Final Form Asriel's Expressions.</strong> "Up until now,
-          I've only been using a fraction of my REAL power!"
+          <strong>Added Fanonswap Blueberry and Carrot.</strong> Because why
+          not. Yeah the characters I added this update were completely random...
         </li>
       </ul>
-      {/*<h1 class="progress-YsDrV- title-18Xx5z">FIXES AND UPDATES </h1>
+      <h1 class="progress-YsDrV- title-18Xx5z">FIXES AND UPDATES </h1>
       <ul>
         <li>
-          <b>Moved the generator over to the button!</b> Finally! Now you can
-          generate Undertale dialog without needing to go into your User
-          Settings!
+          <b>Added "takes".</b> Some fan games have been made multiple times by
+          different people, so I've added "takes" to organize them!
         </li>
-</ul>*/}
+      </ul>
     </div>
     <Modal.Footer direction="horizontal-1ae9ci horizontal-2EEEnY flex-1O1GKY directionRow-3v3tfG">
       <div className="footer-SqIiQ_">

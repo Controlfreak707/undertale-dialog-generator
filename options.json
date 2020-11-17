@@ -44,7 +44,10 @@
     "undertale-hyperdeath-asriel",
     "undertale-final-form-asriel",
     "undertale-chara",
-    "undertale-gaster"
+    "undertale-gaster",
+    "fanonswap-blueberry",
+    "fanonswap-carrot",
+    "extra-best-boi"
   ],
   "expressions": [
     "default",
@@ -232,6 +235,10 @@
     "sad3",
     "scary",
     "crying",
-    "crying2"
+    "crying2",
+    "star-eyes",
+    "star-eyes-surprised",
+    "high",
+    "orange-eye"
   ]
 }

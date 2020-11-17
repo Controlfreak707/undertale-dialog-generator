@@ -144,6 +144,7 @@ class GeneratorModal extends React.Component {
                   value={getSetting("universe", 0)}
                   onChange={(o) => {
                     updateSetting("universe", o.value);
+                    updateSetting("take", 0);
                     this.setState({ updater: !this.state.updater });
                   }}
                 >
@@ -151,17 +152,142 @@ class GeneratorModal extends React.Component {
                 </SelectInput>
               </div>
             </Flex.Child>
+            {/* TAKES */}
+            {getSetting("universe", 0) == 2 && (
+              <Flex.Child>
+                <div>
+                  <SelectInput
+                    options={[
+                      { label: "Deltarune", value: 0 },
+                      { label: "Four Suits", value: 1 },
+                    ]}
+                    value={getSetting("take", 0)}
+                    onChange={(o) => {
+                      updateSetting("take", o.value);
+                      this.setState({ updater: !this.state.updater });
+                    }}
+                  >
+                    Take
+                  </SelectInput>
+                </div>
+              </Flex.Child>
+            )}
+            {getSetting("universe", 0) == 3 && (
+              <Flex.Child>
+                <div>
+                  <SelectInput
+                    options={[
+                      { label: "Underswap+", value: 0 },
+                      { label: "Team Switched Underswap", value: 1 },
+                      { label: "Fanon Underswap", value: 2 },
+                      { label: "A2E Underswap", value: 3 },
+                      { label: "Kalin Underswap", value: 4 },
+                      { label: "Green Brand Underswap", value: 5 },
+                    ]}
+                    value={getSetting("take", 0)}
+                    onChange={(o) => {
+                      updateSetting("take", o.value);
+                      this.setState({ updater: !this.state.updater });
+                    }}
+                  >
+                    Take
+                  </SelectInput>
+                </div>
+              </Flex.Child>
+            )}
+            {getSetting("universe", 0) == 4 && (
+              <Flex.Child>
+                <div>
+                  <SelectInput
+                    options={[
+                      { label: "Classic Underfell", value: 0 },
+                      { label: "A2E Underfell", value: 1 },
+                      { label: "Primus Underfell", value: 2 },
+                      { label: "Shaded Ground", value: 3 },
+                    ]}
+                    value={getSetting("take", 0)}
+                    onChange={(o) => {
+                      updateSetting("take", o.value);
+                      this.setState({ updater: !this.state.updater });
+                    }}
+                  >
+                    Take
+                  </SelectInput>
+                </div>
+              </Flex.Child>
+            )}
+            {getSetting("universe", 0) == 5 && (
+              <Flex.Child>
+                <div>
+                  <SelectInput
+                    options={[
+                      { label: "Disbelief", value: 0 },
+                      { label: "Revenge", value: 1 },
+                      { label: "Underswap Disbelief", value: 2 },
+                    ]}
+                    value={getSetting("take", 0)}
+                    onChange={(o) => {
+                      updateSetting("take", o.value);
+                      this.setState({ updater: !this.state.updater });
+                    }}
+                  >
+                    Take
+                  </SelectInput>
+                </div>
+              </Flex.Child>
+            )}
+            {getSetting("universe", 0) == 11 && (
+              <Flex.Child>
+                <div>
+                  <SelectInput
+                    options={[
+                      { label: "Classic Tubertale", value: 0 },
+                      { label: "Surge!Tubertale", value: 1 },
+                      { label: "Spongetale", value: 2 },
+                      { label: "Steamed Tales", value: 3 },
+                      { label: "Demiverse", value: 4 },
+                      { label: "Demitale", value: 5 },
+                    ]}
+                    value={getSetting("take", 0)}
+                    onChange={(o) => {
+                      updateSetting("take", o.value);
+                      this.setState({ updater: !this.state.updater });
+                    }}
+                  >
+                    Take
+                  </SelectInput>
+                </div>
+              </Flex.Child>
+            )}
+            {getSetting("universe", 0) == 12 && (
+              <Flex.Child>
+                <div>
+                  <SelectInput
+                    options={[
+                      { label: "Extra People", value: 0 },
+                      { label: "Extra Characters", value: 1 },
+                      { label: "Extra Memes", value: 2 },
+                    ]}
+                    value={getSetting("take", 0)}
+                    onChange={(o) => {
+                      updateSetting("take", o.value);
+                      this.setState({ updater: !this.state.updater });
+                    }}
+                  >
+                    Take
+                  </SelectInput>
+                </div>
+              </Flex.Child>
+            )}
           </Flex>
           <Flex>
+            {/* CHARACTERS */}
             {getSetting("universe", 0) == 0 && (
               <Flex.Child>
                 <div>
                   <SelectInput
                     options={[
-                      {
-                        label: "No Character",
-                        value: 0,
-                      },
+                      { label: "No Character", value: 0 },
                       { label: "Empty Space", value: 1 },
                       { label: "Use URL", value: 2 },
                     ]}
@@ -224,7 +350,53 @@ class GeneratorModal extends React.Component {
                 </div>
               </Flex.Child>
             )}
+            {getSetting("universe", 0) == 3 && (
+              <Flex.Child>
+                <div>
+                  {getSetting("take", 0) == 2 && (
+                    <SelectInput
+                      options={[
+                        { label: "Blueberry", value: 28 },
+                        { label: "Carrot", value: 29 },
+                      ]}
+                      value={characters.indexOf(
+                        getSetting("character", characters[28])
+                      )}
+                      onChange={(o) => {
+                        updateSetting("character", characters[o.value]);
+                        updateSetting("expression", expressions[0]);
+                        this.setState({ updater: !this.state.updater });
+                      }}
+                    >
+                      Character
+                    </SelectInput>
+                  )}
+                </div>
+              </Flex.Child>
+            )}
+            {getSetting("universe", 0) == 12 && (
+              <Flex.Child>
+                <div>
+                  {getSetting("take", 0) == 1 && (
+                    <SelectInput
+                      options={[{ label: "Best boi", value: 30 }]}
+                      value={characters.indexOf(
+                        getSetting("character", characters[30])
+                      )}
+                      onChange={(o) => {
+                        updateSetting("character", characters[o.value]);
+                        updateSetting("expression", expressions[0]);
+                        this.setState({ updater: !this.state.updater });
+                      }}
+                    >
+                      Character
+                    </SelectInput>
+                  )}
+                </div>
+              </Flex.Child>
+            )}
             {/* EXPRESSIONS */}
+            {/* Undertale */}
             {getSetting("character", characters[0]) == "undertale-flowey" && (
               <Flex.Child>
                 <div>
@@ -930,6 +1102,70 @@ class GeneratorModal extends React.Component {
                       { label: "Funny", value: 81 },
                       { label: "Apathetic", value: 108 },
                       { label: "Glowing Eyes", value: 109 },
+                    ]}
+                    value={expressions.indexOf(
+                      getSetting("expression", expressions[0])
+                    )}
+                    onChange={(o) => {
+                      updateSetting("expression", expressions[o.value]);
+                      this.setState({ updater: !this.state.updater });
+                    }}
+                  >
+                    Expression
+                  </SelectInput>
+                </div>
+              </Flex.Child>
+            )}
+            {/* Underswap - Fanonswap */}
+            {getSetting("character", characters[0]) ==
+              "fanonswap-blueberry" && (
+              <Flex.Child>
+                <div>
+                  <SelectInput
+                    options={[
+                      { label: "Default", value: 0 },
+                      { label: "Couraged", value: 178 },
+                      { label: "Mouth Open", value: 162 },
+                      { label: "Smiling", value: 105 },
+                      { label: "Blushing", value: 53 },
+                      { label: "Star Eyes", value: 186 },
+                      { label: "Star Eyes, Surprised", value: 187 },
+                      { label: "Sad", value: 22 },
+                      { label: "Sad, Eyes Closed", value: 25 },
+                      { label: "Angry", value: 7 },
+                      { label: "Pissed", value: 68 },
+                      { label: "Shocked", value: 14 },
+                      { label: "Crying", value: 184 },
+                      { label: "Crying 2", value: 185 },
+                    ]}
+                    value={expressions.indexOf(
+                      getSetting("expression", expressions[0])
+                    )}
+                    onChange={(o) => {
+                      updateSetting("expression", expressions[o.value]);
+                      this.setState({ updater: !this.state.updater });
+                    }}
+                  >
+                    Expression
+                  </SelectInput>
+                </div>
+              </Flex.Child>
+            )}
+            {getSetting("character", characters[0]) == "fanonswap-carrot" && (
+              <Flex.Child>
+                <div>
+                  <SelectInput
+                    options={[
+                      { label: "Default", value: 0 },
+                      { label: "Funny", value: 81 },
+                      { label: "Incredulous", value: 61 },
+                      { label: "Winking", value: 1 },
+                      { label: "Looking Away", value: 2 },
+                      { label: "Angry", value: 7 },
+                      { label: "High", value: 188 },
+                      { label: "Eyes Closed", value: 4 },
+                      { label: "Scary", value: 183 },
+                      { label: "Orange Eye", value: 189 },
                     ]}
                     value={expressions.indexOf(
                       getSetting("expression", expressions[0])
