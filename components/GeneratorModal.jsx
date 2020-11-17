@@ -489,6 +489,73 @@ class GeneratorModal extends React.Component {
                 </div>
               </Flex.Child>
             )}
+            {getSetting("character", characters[0]) == "undertale-undyne" && (
+              <Flex.Child>
+                <div>
+                  <SelectInput
+                    options={[
+                      { label: "Default", value: 0 },
+                      { label: "Happy", value: 42 },
+                      { label: "Happy, Stained", value: 110 },
+                      { label: "Sweating", value: 20 },
+                      { label: "Blushing", value: 53 },
+                      { label: "What", value: 76 },
+                      { label: "Funny", value: 81 },
+                      { label: "Suprised", value: 54 },
+                      { label: "Surprised, Stained", value: 111 },
+                      { label: "Annoyed", value: 63 },
+                      { label: "Annoyed, Looking Away", value: 112 },
+                      { label: "Angry", value: 7 },
+                      { label: "Pissed", value: 68 },
+                      { label: "Sad, Looking Away", value: 23 },
+                      { label: "Sad, Looking Down", value: 24 },
+                      { label: "Defeated", value: 113 },
+                      { label: "Disgusted", value: 114 },
+                    ]}
+                    value={expressions.indexOf(
+                      getSetting("expression", expressions[0])
+                    )}
+                    onChange={(o) => {
+                      updateSetting("expression", expressions[o.value]);
+                      this.setState({ updater: !this.state.updater });
+                    }}
+                  >
+                    Expression
+                  </SelectInput>
+                </div>
+              </Flex.Child>
+            )}
+            {getSetting("character", characters[0]) ==
+              "undertale-undyne-undying" && (
+              <Flex.Child>
+                <div>
+                  <SelectInput
+                    options={[
+                      { label: "Default", value: 0 },
+                      { label: "Sad", value: 22 },
+                      { label: "Sad 2", value: 115 },
+                      { label: "Grinning", value: 10 },
+                      { label: "Sweating", value: 20 },
+                      { label: "Sweating 2", value: 116 },
+                      { label: "Sweating, Looking Away", value: 117 },
+                      { label: "Laughing", value: 11 },
+                      { label: "Laughing 2", value: 118 },
+                      { label: "Laughing 3", value: 119 },
+                      { label: "Hurt", value: 17 },
+                    ]}
+                    value={expressions.indexOf(
+                      getSetting("expression", expressions[0])
+                    )}
+                    onChange={(o) => {
+                      updateSetting("expression", expressions[o.value]);
+                      this.setState({ updater: !this.state.updater });
+                    }}
+                  >
+                    Expression
+                  </SelectInput>
+                </div>
+              </Flex.Child>
+            )}
             {getSetting("character", characters[0]) == "undertale-temmie" && (
               <Flex.Child>
                 <div>
@@ -497,6 +564,94 @@ class GeneratorModal extends React.Component {
                       { label: "Default", value: 0 },
                       { label: "Hurt", value: 17 },
                       { label: "No Food", value: 96 },
+                    ]}
+                    value={expressions.indexOf(
+                      getSetting("expression", expressions[0])
+                    )}
+                    onChange={(o) => {
+                      updateSetting("expression", expressions[o.value]);
+                      this.setState({ updater: !this.state.updater });
+                    }}
+                  >
+                    Expression
+                  </SelectInput>
+                </div>
+              </Flex.Child>
+            )}
+            {getSetting("character", characters[0]) == "undertale-alphys" && (
+              <Flex.Child>
+                <div>
+                  <SelectInput
+                    options={[
+                      { label: "Default", value: 0 },
+                      { label: "Confident", value: 120 },
+                      { label: "Excited", value: 121 },
+                      { label: "Happy, Blushing", value: 122 },
+                      { label: "Love", value: 123 },
+                      { label: "Surprised", value: 54 },
+                      { label: "Serious", value: 65 },
+                      { label: "Serious, Looking Away", value: 67 },
+                      { label: "Concerned", value: 124 },
+                      { label: "Looking Up", value: 125 },
+                      { label: "Nervous", value: 126 },
+                      { label: "Nervous 2", value: 127 },
+                      { label: "Nervous, Looking Up", value: 128 },
+                      { label: "Sad", value: 22 },
+                      { label: "Sad, Looking Away", value: 23 },
+                      { label: "Sad, Looking Down", value: 24 },
+                      { label: "Sad, Surprised", value: 129 },
+                      { label: "Sweating", value: 20 },
+                      { label: "Sweating, Blushing", value: 130 },
+                      { label: "Sweating, Looking Away", value: 117 },
+                      { label: "Sweating, Smiling", value: 131 },
+                      { label: "Sweating, Looking Down", value: 132 },
+                      { label: "Sweating, Couraged", value: 133 },
+                      { label: "Relieved", value: 134 },
+                      { label: "Relieved, Looking Away", value: 135 },
+                      { label: "Pain", value: 136 },
+                      { label: "Pain 2", value: 137 },
+                    ]}
+                    value={expressions.indexOf(
+                      getSetting("expression", expressions[0])
+                    )}
+                    onChange={(o) => {
+                      updateSetting("expression", expressions[o.value]);
+                      this.setState({ updater: !this.state.updater });
+                    }}
+                  >
+                    Expression
+                  </SelectInput>
+                </div>
+              </Flex.Child>
+            )}
+            {getSetting("character", characters[0]) == "undertale-mettaton" && (
+              <Flex.Child>
+                <div>
+                  <SelectInput
+                    options={[
+                      { label: "Default", value: 0 },
+                      { label: "Arms Lowered", value: 138 },
+                      { label: "Arms Lowered, Black Screen", value: 139 },
+                      { label: "Oh No", value: 140 },
+                      { label: "Microphone", value: 141 },
+                      { label: "Microphone, M", value: 142 },
+                      { label: "Microphone, Black Screen", value: 143 },
+                      { label: "Microphone, Arm Lowered", value: 144 },
+                      { label: "Microphone, Number 1", value: 145 },
+                      { label: "Microphone, Inverted Number 1", value: 146 },
+                      { label: "News Reporter", value: 147 },
+                      { label: "News Reporter, Arms Down", value: 148 },
+                      { label: "News Reporter, Papers", value: 149 },
+                      { label: "News Reporter, Arm Raised", value: 150 },
+                      { label: "News Reporter, Arms Raised", value: 151 },
+                      {
+                        label: "News Reporter, Arms Raised, Black Screen",
+                        value: 152,
+                      },
+                      { label: "News Reporter, Microphone", value: 153 },
+                      { label: "News Reporter, Oh No", value: 154 },
+                      { label: "Switch Off", value: 155 },
+                      { label: "Switch On", value: 156 },
                     ]}
                     value={expressions.indexOf(
                       getSetting("expression", expressions[0])
@@ -520,6 +675,121 @@ class GeneratorModal extends React.Component {
                       { label: "Angry", value: 7 },
                       { label: "Money", value: 33 },
                       { label: "Spider", value: 97 },
+                    ]}
+                    value={expressions.indexOf(
+                      getSetting("expression", expressions[0])
+                    )}
+                    onChange={(o) => {
+                      updateSetting("expression", expressions[o.value]);
+                      this.setState({ updater: !this.state.updater });
+                    }}
+                  >
+                    Expression
+                  </SelectInput>
+                </div>
+              </Flex.Child>
+            )}
+            {getSetting("character", characters[0]) ==
+              "undertale-mettaton-ex" && (
+              <Flex.Child>
+                <div>
+                  <SelectInput
+                    options={[
+                      { label: "Default", value: 0 },
+                      { label: "Tilted", value: 157 },
+                      { label: "Sassy", value: 5 },
+                      { label: "Funny", value: 81 },
+                      { label: "Laughing", value: 11 },
+                      { label: "Tongue Out", value: 158 },
+                      { label: "Tongue Out 2", value: 159 },
+                      { label: "Happy", value: 42 },
+                      { label: "Cat Mouth", value: 160 },
+                      { label: "Apathetic", value: 108 },
+                      { label: "Evil", value: 9 },
+                      { label: "Evil, Eyes Closed", value: 161 },
+                      { label: "Mouth Open", value: 162 },
+                      { label: "Mouth Open 2", value: 163 },
+                      { label: "Angry", value: 7 },
+                      { label: "Angry, Eyes Closed", value: 164 },
+                      { label: "Looking Away", value: 2 },
+                      { label: "Sad", value: 22 },
+                      { label: "Sad 2", value: 115 },
+                      { label: "Sad, Smiling", value: 43 },
+                      { label: "Hit", value: 87 },
+                      { label: "Unused 1", value: 165 },
+                      { label: "Unused 2", value: 166 },
+                      { label: "Unused 3", value: 167 },
+                    ]}
+                    value={expressions.indexOf(
+                      getSetting("expression", expressions[0])
+                    )}
+                    onChange={(o) => {
+                      updateSetting("expression", expressions[o.value]);
+                      this.setState({ updater: !this.state.updater });
+                    }}
+                  >
+                    Expression
+                  </SelectInput>
+                </div>
+              </Flex.Child>
+            )}
+            {getSetting("character", characters[0]) ==
+              "undertale-mettaton-neo" && (
+              <Flex.Child>
+                <div>
+                  <SelectInput
+                    options={[
+                      { label: "Default", value: 0 },
+                      { label: "Serious", value: 65 },
+                      { label: "Pissed", value: 68 },
+                      { label: "Insane", value: 168 },
+                      { label: "Eyes Closed", value: 4 },
+                      { label: "Confident", value: 120 },
+                      { label: "Sad", value: 22 },
+                    ]}
+                    value={expressions.indexOf(
+                      getSetting("expression", expressions[0])
+                    )}
+                    onChange={(o) => {
+                      updateSetting("expression", expressions[o.value]);
+                      this.setState({ updater: !this.state.updater });
+                    }}
+                  >
+                    Expression
+                  </SelectInput>
+                </div>
+              </Flex.Child>
+            )}
+            {getSetting("character", characters[0]) == "undertale-asgore" && (
+              <Flex.Child>
+                <div>
+                  <SelectInput
+                    options={[
+                      { label: "Default", value: 0 },
+                      { label: "Eyes Closed", value: 4 },
+                      { label: "Happy", value: 42 },
+                      { label: "Happy, Eyes Closed", value: 169 },
+                      { label: "Surprised", value: 54 },
+                      { label: "Looking Away", value: 2 },
+                      { label: "Worried", value: 95 },
+                      { label: "Shocked", value: 14 },
+                      { label: "Shocked, Looking Away", value: 170 },
+                      { label: "Shadow", value: 171 },
+                      { label: "Googly Eyes", value: 32 },
+                      { label: "Hurt", value: 17 },
+                      { label: "Hurt 2", value: 18 },
+                      { label: "Sad", value: 22 },
+                      { label: "Sad, Eyes Closed", value: 25 },
+                      { label: "Sad, Eyes Closed 2", value: 172 },
+                      { label: "Sad, Eyes Closed 3", value: 173 },
+                      { label: "Sad, Looking Away", value: 23 },
+                      { label: "Eyes Semi-Closed", value: 41 },
+                      { label: "Serious, Eyes Closed", value: 174 },
+                      { label: "Serious, Eyes Closed, Crying", value: 175 },
+                      { label: "Sweating", value: 20 },
+                      { label: "Tears", value: 176 },
+                      { label: "What", value: 76 },
+                      { label: "Screaming", value: 177 },
                     ]}
                     value={expressions.indexOf(
                       getSetting("expression", expressions[0])
@@ -566,6 +836,89 @@ class GeneratorModal extends React.Component {
                 </div>
               </Flex.Child>
             )}
+            {getSetting("character", characters[0]) == "undertale-asriel" && (
+              <Flex.Child>
+                <div>
+                  <SelectInput
+                    options={[
+                      { label: "Default", value: 0 },
+                      { label: "Couraged", value: 178 },
+                      { label: "Looking Away", value: 2 },
+                      { label: "Sad", value: 22 },
+                      { label: "Sad, Looking Down", value: 24 },
+                      { label: "Sad, Eyes Closed", value: 25 },
+                      { label: "Sad 2, Eyes Closed", value: 179 },
+                      { label: "Relieved", value: 134 },
+                    ]}
+                    value={expressions.indexOf(
+                      getSetting("expression", expressions[0])
+                    )}
+                    onChange={(o) => {
+                      updateSetting("expression", expressions[o.value]);
+                      this.setState({ updater: !this.state.updater });
+                    }}
+                  >
+                    Expression
+                  </SelectInput>
+                </div>
+              </Flex.Child>
+            )}
+            {getSetting("character", characters[0]) ==
+              "undertale-hyperdeath-asriel" && (
+              <Flex.Child>
+                <div>
+                  <SelectInput
+                    options={[
+                      { label: "Default", value: 0 },
+                      { label: "Confident", value: 120 },
+                      { label: "Menacing", value: 180 },
+                      { label: "Smug", value: 181 },
+                      { label: "Angry", value: 7 },
+                      { label: "Eyes Closed", value: 4 },
+                      { label: "Winking", value: 1 },
+                    ]}
+                    value={expressions.indexOf(
+                      getSetting("expression", expressions[0])
+                    )}
+                    onChange={(o) => {
+                      updateSetting("expression", expressions[o.value]);
+                      this.setState({ updater: !this.state.updater });
+                    }}
+                  >
+                    Expression
+                  </SelectInput>
+                </div>
+              </Flex.Child>
+            )}
+            {getSetting("character", characters[0]) ==
+              "undertale-final-form-asriel" && (
+              <Flex.Child>
+                <div>
+                  <SelectInput
+                    options={[
+                      { label: "Default", value: 0 },
+                      { label: "Scared", value: 19 },
+                      { label: "Angry", value: 7 },
+                      { label: "Sad", value: 22 },
+                      { label: "Sad 2", value: 115 },
+                      { label: "Sad 3", value: 182 },
+                      { label: "Scary", value: 183 },
+                      { label: "Crying", value: 184 },
+                      { label: "Crying 2", value: 185 },
+                    ]}
+                    value={expressions.indexOf(
+                      getSetting("expression", expressions[0])
+                    )}
+                    onChange={(o) => {
+                      updateSetting("expression", expressions[o.value]);
+                      this.setState({ updater: !this.state.updater });
+                    }}
+                  >
+                    Expression
+                  </SelectInput>
+                </div>
+              </Flex.Child>
+            )}
             {getSetting("character", characters[0]) == "undertale-gaster" && (
               <Flex.Child>
                 <div>
@@ -592,7 +945,7 @@ class GeneratorModal extends React.Component {
               </Flex.Child>
             )}
           </Flex>
-          {getSetting("character", characters[0]) == characters[2] && (
+          {getSetting("character", characters[0]) == "custom" && (
             <TextAreaInput
               value={getSetting("url", "")}
               onChange={(o) => {

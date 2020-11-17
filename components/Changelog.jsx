@@ -11,7 +11,7 @@ module.exports = () => (
       <Flex.Child>
         <FormTitle tag="h4">Undertale Dialog Generator</FormTitle>
         <div class="colorStandard-2KCXvj size12-3cLvbJ date-1k6kG2">
-          15 November 2020
+          16 November 2020
         </div>
       </Flex.Child>
       <Flex.Child>
@@ -32,43 +32,49 @@ module.exports = () => (
       </h1>
       <ul>
         <li>
-          <strong>Completed Toriel!</strong> I had just barely started adding
-          Toriel last time I worked on characters, but now she's done!
+          <strong>ALL UNDERTALE CHARACTERS ARE COMPLETE!</strong> Yup! All
+          characters from the original undertale have been added and their
+          expressions have been completed! Any characters that don't have
+          multiple expressions unfortunately will never get expressions.
         </li>
         <li>
-          <strong>Added Napstablook's expressions.</strong> All Undertale
-          characters, such as Napstablook, have been added, their expressions
-          have not all been added yet, however.
+          <strong>Added Undyne's Expressions.</strong>{" "}
+          "NGAAAAAHHHHHHHHHHHHHHHHH!"
         </li>
         <li>
-          <strong>Added Sans' expressions.</strong> The funniest skeleton in
-          Snowdin!
+          <strong>Added Undyne The Undying's Expressions.</strong> "You're gonna
+          have to try a little harder than THAT."
         </li>
         <li>
-          <strong>Added Papyrus's expressions.</strong> The very famous royal
-          guardsman! (Note: not yet a very famous royal guardsman.)
+          <strong>Added Alphys's Expressions.</strong> "Ummm... H-h-hiya!"
         </li>
         <li>
-          <strong>Added Moster Kid's expressions.</strong> Better now than never
-          I guess...
+          <strong>Added Mettaton's Expressions.</strong> "I'M NOT GOING TO
+          DESTROY YOU WITHOUT A LIVE TELEVISION AUDIENCE!!"
         </li>
         <li>
-          <strong>Added Mad Dummy's expressions.</strong> Fools, FOOLS, FOOLS!
+          <strong>Added Mettaton EX's Expressions.</strong> "Oh, yes~!"
         </li>
         <li>
-          <strong>Added Temmie's expressions.</strong> hOi, am tem! cOm to tEm
-          shoP, yA?
+          <strong>Added Mettaton NEO's Expressions.</strong> Just Mettaton EX
+          but spikier... I don't think they even have any unique quotes.
         </li>
         <li>
-          <strong>Added Muffet's expressions.</strong> Would you care for a
-          pastry? Ahuhuhu~
+          <strong>Added Asgore's Expressions.</strong> "Would you care for a cup
+          of tea?"
         </li>
         <li>
-          <strong>Added Omega Flowey's expressions.</strong> Your best
-          nightmare!
+          <strong>Added Asriel's Expressions.</strong> "It's me, your best
+          friend."
         </li>
         <li>
-          <strong>Added 🕈📬👎📬 ☝✌💧❄☜☼'s expressions.</strong> Who...?
+          <strong>Added God of Hyperdeath Asriel's Expressions.</strong>{" "}
+          "Legendary being made of every SOUL in the Underground. The Absolute
+          GOD of Hyperdeath!"
+        </li>
+        <li>
+          <strong>Added Final Form Asriel's Expressions.</strong> "Up until now,
+          I've only been using a fraction of my REAL power!"
         </li>
       </ul>
       {/*<h1 class="progress-YsDrV- title-18Xx5z">FIXES AND UPDATES </h1>
