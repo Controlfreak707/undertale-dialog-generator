@@ -14,7 +14,7 @@ const updateSetting = (setting, value) => settings.set(setting, value);
 const {
   modes,
   boxes,
-  boxColors,
+  colors,
   characters,
   expressions,
 } = require("../options.json");
@@ -30,17 +30,22 @@ class GeneratorModal extends React.Component {
     this.link = () =>
       `https://www.demirramon.com/utgen.png?text=${encodeURIComponent(
         getSetting("message", "Input a message!") || "Input a message!"
-      )}&box=${getSetting("box", boxes[0])}&boxcolor=${getSetting(
-        "boxcolor",
-        boxColors[0]
-      )}${
-        getSetting("character", characters[0]) != ""
+      )}&box=${getSetting("box", boxes[0])}${
+        getSetting("boxcolor", colors[0]) != colors[0]
+          ? "&boxcolor=" + getSetting("boxcolor", colors[0])
+          : ""
+      }${
+        getSetting("character", characters[0]) != characters[0]
           ? "&character=" + getSetting("character", characters[0])
           : ""
       }&expression=${getSetting("expression", expressions[0])}${
         getSetting("url", "") != "" &&
         getSetting("character", characters[0]) == "custom"
           ? "&url=" + encodeURIComponent(getSetting("url", ""))
+          : ""
+      }${
+        getSetting("charcolor", colors[0]) != colors[0]
+          ? "&charcolor=" + getSetting("charcolor", colors[0])
           : ""
       }${
         getSetting("mode", modes[0]) != ""
@@ -104,16 +109,52 @@ class GeneratorModal extends React.Component {
                 <SelectInput
                   options={[
                     { label: "White", value: 0 },
-                    { label: "Red", value: 1 },
-                    { label: "Orange", value: 2 },
-                    { label: "Yellow", value: 3 },
-                    { label: "Lime", value: 4 },
+                    { label: "Catty (Purple)", value: 1 },
+                    { label: "Bratty (Pink)", value: 2 },
+                    { label: "Underfell (Red)", value: 3 },
+                    { label: "Red", value: 4 },
+                    { label: "Orange", value: 5 },
+                    { label: "Yellow", value: 6 },
+                    { label: "Lime", value: 7 },
+                    { label: "Green", value: 8 },
+                    { label: "Spring Green", value: 9 },
+                    { label: "Cyan", value: 10 },
+                    { label: "Blue", value: 11 },
+                    { label: "Sea Blue", value: 12 },
+                    { label: "Purple", value: 13 },
+                    { label: "Pink", value: 14 },
+                    { label: "Hot Pink", value: 15 },
+                    { label: "Gray", value: 16 },
+                    { label: "Dark Red", value: 17 },
+                    { label: "Dark Orange", value: 18 },
+                    { label: "Dark Yellow", value: 19 },
+                    { label: "Dark Lime", value: 20 },
+                    { label: "Dark Green", value: 21 },
+                    { label: "Dark Spring Green", value: 22 },
+                    { label: "Dark Cyan", value: 23 },
+                    { label: "Dark Blue", value: 24 },
+                    { label: "Dark Sea Blue", value: 25 },
+                    { label: "Dark Purple", value: 26 },
+                    { label: "Dark Pink", value: 27 },
+                    { label: "Dark Hot Pink", value: 28 },
+                    { label: "Dark Gray", value: 29 },
+                    { label: "Light Red", value: 30 },
+                    { label: "Light Orange", value: 31 },
+                    { label: "Light Yellow", value: 32 },
+                    { label: "Light Lime", value: 33 },
+                    { label: "Light Green", value: 34 },
+                    { label: "Light Spring Green", value: 35 },
+                    { label: "Light Cyan", value: 36 },
+                    { label: "Light Blue", value: 37 },
+                    { label: "Light Sea Blue", value: 38 },
+                    { label: "Light Purple", value: 39 },
+                    { label: "Light Pink", value: 40 },
+                    { label: "Light Hot Pink", value: 41 },
+                    { label: "Light Gray", value: 42 },
                   ]}
-                  value={boxColors.indexOf(
-                    getSetting("boxcolor", boxColors[0])
-                  )}
+                  value={colors.indexOf(getSetting("boxcolor", colors[0]))}
                   onChange={(o) => {
-                    updateSetting("boxcolor", boxColors[o.value]);
+                    updateSetting("boxcolor", colors[o.value]);
                     this.setState({ updater: !this.state.updater });
                   }}
                 >
@@ -145,6 +186,7 @@ class GeneratorModal extends React.Component {
                   onChange={(o) => {
                     updateSetting("universe", o.value);
                     updateSetting("take", 0);
+                    updateSetting("character", characters[0]);
                     this.setState({ updater: !this.state.updater });
                   }}
                 >
@@ -164,6 +206,7 @@ class GeneratorModal extends React.Component {
                     value={getSetting("take", 0)}
                     onChange={(o) => {
                       updateSetting("take", o.value);
+                      updateSetting("character", characters[0]);
                       this.setState({ updater: !this.state.updater });
                     }}
                   >
@@ -187,6 +230,7 @@ class GeneratorModal extends React.Component {
                     value={getSetting("take", 0)}
                     onChange={(o) => {
                       updateSetting("take", o.value);
+                      updateSetting("character", characters[0]);
                       this.setState({ updater: !this.state.updater });
                     }}
                   >
@@ -208,6 +252,7 @@ class GeneratorModal extends React.Component {
                     value={getSetting("take", 0)}
                     onChange={(o) => {
                       updateSetting("take", o.value);
+                      updateSetting("character", characters[0]);
                       this.setState({ updater: !this.state.updater });
                     }}
                   >
@@ -228,6 +273,7 @@ class GeneratorModal extends React.Component {
                     value={getSetting("take", 0)}
                     onChange={(o) => {
                       updateSetting("take", o.value);
+                      updateSetting("character", characters[0]);
                       this.setState({ updater: !this.state.updater });
                     }}
                   >
@@ -251,6 +297,7 @@ class GeneratorModal extends React.Component {
                     value={getSetting("take", 0)}
                     onChange={(o) => {
                       updateSetting("take", o.value);
+                      updateSetting("character", characters[0]);
                       this.setState({ updater: !this.state.updater });
                     }}
                   >
@@ -271,6 +318,7 @@ class GeneratorModal extends React.Component {
                     value={getSetting("take", 0)}
                     onChange={(o) => {
                       updateSetting("take", o.value);
+                      updateSetting("character", characters[0]);
                       this.setState({ updater: !this.state.updater });
                     }}
                   >
@@ -1180,6 +1228,64 @@ class GeneratorModal extends React.Component {
                 </div>
               </Flex.Child>
             )}
+            <Flex.Child>
+              <div>
+                <SelectInput
+                  options={[
+                    { label: "White", value: 0 },
+                    { label: "Catty (Purple)", value: 1 },
+                    { label: "Bratty (Pink)", value: 2 },
+                    { label: "Underfell (Red)", value: 3 },
+                    { label: "Red", value: 4 },
+                    { label: "Orange", value: 5 },
+                    { label: "Yellow", value: 6 },
+                    { label: "Lime", value: 7 },
+                    { label: "Green", value: 8 },
+                    { label: "Spring Green", value: 9 },
+                    { label: "Cyan", value: 10 },
+                    { label: "Blue", value: 11 },
+                    { label: "Sea Blue", value: 12 },
+                    { label: "Purple", value: 13 },
+                    { label: "Pink", value: 14 },
+                    { label: "Hot Pink", value: 15 },
+                    { label: "Gray", value: 16 },
+                    { label: "Dark Red", value: 17 },
+                    { label: "Dark Orange", value: 18 },
+                    { label: "Dark Yellow", value: 19 },
+                    { label: "Dark Lime", value: 20 },
+                    { label: "Dark Green", value: 21 },
+                    { label: "Dark Spring Green", value: 22 },
+                    { label: "Dark Cyan", value: 23 },
+                    { label: "Dark Blue", value: 24 },
+                    { label: "Dark Sea Blue", value: 25 },
+                    { label: "Dark Purple", value: 26 },
+                    { label: "Dark Pink", value: 27 },
+                    { label: "Dark Hot Pink", value: 28 },
+                    { label: "Dark Gray", value: 29 },
+                    { label: "Light Red", value: 30 },
+                    { label: "Light Orange", value: 31 },
+                    { label: "Light Yellow", value: 32 },
+                    { label: "Light Lime", value: 33 },
+                    { label: "Light Green", value: 34 },
+                    { label: "Light Spring Green", value: 35 },
+                    { label: "Light Cyan", value: 36 },
+                    { label: "Light Blue", value: 37 },
+                    { label: "Light Sea Blue", value: 38 },
+                    { label: "Light Purple", value: 39 },
+                    { label: "Light Pink", value: 40 },
+                    { label: "Light Hot Pink", value: 41 },
+                    { label: "Light Gray", value: 42 },
+                  ]}
+                  value={colors.indexOf(getSetting("charcolor", colors[0]))}
+                  onChange={(o) => {
+                    updateSetting("charcolor", colors[o.value]);
+                    this.setState({ updater: !this.state.updater });
+                  }}
+                >
+                  Sprite Color
+                </SelectInput>
+              </div>
+            </Flex.Child>
           </Flex>
           {getSetting("character", characters[0]) == "custom" && (
             <TextAreaInput

@@ -25,9 +25,9 @@ module.exports = () => (
     >
       <img
         class="image-2WjK2f"
-        src={`https://www.demirramon.com/utgen.png?text=Here's%20what's%20new%20in%20color%3Dred%20Undertale%20Dialog%20Generator%20color%3Dwhite%20v${version}%3A&box=undertale&boxcolor=white&character=custom&expression=default&url=https%3A%2F%2Fi.imgur.com%2FthiTjiZ.png`}
+        src={`https://www.demirramon.com/utgen.png?text=Here's%20what's%20new%20in%20color%3Dred%20Undertale%20Dialog%20Generator%20color%3Dwhite%20v${version}%3A&box=undertale&character=custom&expression=default&url=https%3A%2F%2Fi.imgur.com%2FthiTjiZ.png`}
       ></img>
-      <h1 class="added-2hLRj3 title-18Xx5z marginTop-2incQ6">
+      {/*<h1 class="added-2hLRj3 title-18Xx5z marginTop-2incQ6">
         NEW CHARACTERS{" "}
       </h1>
       <ul>
@@ -35,16 +35,16 @@ module.exports = () => (
           <strong>Added Best Boi.</strong> Uh- don't worry about that, I just
           added 'em because I was bored when developing this...
         </li>
-        <li>
-          <strong>Added Fanonswap Blueberry and Carrot.</strong> Because why
-          not. Yeah the characters I added this update were completely random...
-        </li>
-      </ul>
+      </ul>*/}
       <h1 class="progress-YsDrV- title-18Xx5z">FIXES AND UPDATES </h1>
       <ul>
         <li>
-          <b>Added "takes".</b> Some fan games have been made multiple times by
-          different people, so I've added "takes" to organize them!
+          <b>Added "sprite color".</b> Now you can change the color of sprites,
+          pretty simple, but still pretty cool.
+        </li>
+        <li>
+          <b>Added more colors to "box color".</b> Jeez, there were only five
+          options before...?
         </li>
       </ul>
     </div>
