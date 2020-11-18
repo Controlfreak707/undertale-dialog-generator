@@ -11,7 +11,7 @@ module.exports = () => (
       <Flex.Child>
         <FormTitle tag="h4">Undertale Dialog Generator</FormTitle>
         <div class="colorStandard-2KCXvj size12-3cLvbJ date-1k6kG2">
-          16 November 2020
+          17 November 2020
         </div>
       </Flex.Child>
       <Flex.Child>
@@ -39,12 +39,9 @@ module.exports = () => (
       <h1 class="progress-YsDrV- title-18Xx5z">FIXES AND UPDATES </h1>
       <ul>
         <li>
-          <b>Added "sprite color".</b> Now you can change the color of sprites,
-          pretty simple, but still pretty cool.
-        </li>
-        <li>
-          <b>Added more colors to "box color".</b> Jeez, there were only five
-          options before...?
+          <b>Added "Auto-Generation".</b> By clicking on the Undertale Generator
+          button while holding the "Alt" key, you can toggle automatic Undertale
+          Dialog Generation (in other words, make all messages Undertale)!
         </li>
       </ul>
     </div>

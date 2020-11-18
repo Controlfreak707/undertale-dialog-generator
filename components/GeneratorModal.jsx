@@ -1,6 +1,13 @@
 const { React, messages, channels } = require("powercord/webpack");
 const { clipboard } = require("electron");
-const { FormTitle, Button, Flex } = require("powercord/components");
+const {
+  FormTitle,
+  Button,
+  Flex,
+  Card,
+  Text,
+  Divider,
+} = require("powercord/components");
 const { SelectInput, TextAreaInput } = require("powercord/components/settings");
 const { Modal } = require("powercord/components/modal");
 const { close: closeModal } = require("powercord/modal");
@@ -61,6 +68,20 @@ class GeneratorModal extends React.Component {
           <FormTitle tag="h4">Undertale Dialog Generator</FormTitle>
         </Modal.Header>
         <Modal.Content>
+          <Card style={{ padding: "18px" }}>
+            <Text>
+              Click the Undertale generator button while holding "Alt" to toggle
+              auto-generation.{" "}
+              <a
+                href="https://github.com/Controlfreak707/undertale-dialog-generator/issues/3"
+                target="_blank"
+              >
+                (Suggested by Mr. Foxtrot#5220)
+              </a>
+            </Text>
+          </Card>
+          <Divider />
+          <div style={{ marginBottom: 20 }} />
           <Flex>
             <Flex.Child>
               <div>

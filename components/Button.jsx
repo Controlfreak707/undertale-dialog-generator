@@ -9,10 +9,11 @@ const buttonClasses = getModule(["button"], false);
 const buttonWrapperClasses = getModule(["buttonWrapper", "pulseButton"], false);
 const buttonTextAreaClasses = getModule(["button", "textArea"], false);
 
-module.exports = () => (
+module.exports = ({ toggled }) => (
   <Tooltip color="black" postion="top" text="Undertale Dialog Generator">
     {({ onMouseLeave, onMouseEnter }) => (
       <Button
+        className={toggled ? "active" : ""}
         look={Button.Looks.BLANK}
         size={Button.Sizes.ICON}
         onMouseEnter={onMouseEnter}
