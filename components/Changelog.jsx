@@ -11,7 +11,7 @@ module.exports = () => (
       <Flex.Child>
         <FormTitle tag="h4">Undertale Dialog Generator</FormTitle>
         <div class="colorStandard-2KCXvj size12-3cLvbJ date-1k6kG2">
-          17 November 2020
+          18 November 2020
         </div>
       </Flex.Child>
       <Flex.Child>
@@ -42,6 +42,10 @@ module.exports = () => (
           <b>Added "Auto-Generation".</b> By clicking on the Undertale Generator
           button while holding the "Alt" key, you can toggle automatic Undertale
           Dialog Generation (in other words, make all messages Undertale)!
+        </li>
+        <li>
+          <b>Improve prevention of image embed error.</b> (In other words, make
+          it less likely that a plain ol' link will be sent.)
         </li>
       </ul>
     </div>

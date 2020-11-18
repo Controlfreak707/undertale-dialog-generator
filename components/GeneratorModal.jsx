@@ -37,7 +37,11 @@ class GeneratorModal extends React.Component {
     this.link = () =>
       `https://www.demirramon.com/utgen.png?text=${encodeURIComponent(
         getSetting("message", "Input a message!") || "Input a message!"
-      )}&box=${getSetting("box", boxes[0])}${
+      )}${
+        getSetting("box", boxes[0]) != boxes[0]
+          ? "&box=" + getSetting("box", boxes[0])
+          : ""
+      }${
         getSetting("boxcolor", colors[0]) != colors[0]
           ? "&boxcolor=" + getSetting("boxcolor", colors[0])
           : ""
@@ -45,7 +49,11 @@ class GeneratorModal extends React.Component {
         getSetting("character", characters[0]) != characters[0]
           ? "&character=" + getSetting("character", characters[0])
           : ""
-      }&expression=${getSetting("expression", expressions[0])}${
+      }${
+        getSetting("expression", expressions[0]) != expressions[0]
+          ? "&expression=" + getSetting("expression", expressions[0])
+          : ""
+      }${
         getSetting("url", "") != "" &&
         getSetting("character", characters[0]) == "custom"
           ? "&url=" + encodeURIComponent(getSetting("url", ""))

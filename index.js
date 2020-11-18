@@ -45,21 +45,36 @@ module.exports = class UndertaleDialogGenerator extends Plugin {
           args.join(" ") ||
             this.settings.get("message", "Input a message!") ||
             "Input a message!"
-        )}&box=${this.settings.get(
-          "box",
-          "undertale"
-        )}&boxcolor=${this.settings.get(
-          "boxcolor",
-          "white"
-        )}&character=${this.settings.get(
-          "character",
-          ""
-        )}&expression=${this.settings.get(
-          "expression",
-          "default"
-        )}&url=${encodeURIComponent(
-          this.settings.get("url", "")
-        )}&mode=${this.settings.get("mode", "")}`,
+        )}${
+          this.settings.get("box", boxes[0]) != boxes[0]
+            ? "&box=" + this.settings.get("box", boxes[0])
+            : ""
+        }${
+          this.settings.get("boxcolor", colors[0]) != colors[0]
+            ? "&boxcolor=" + this.settings.get("boxcolor", colors[0])
+            : ""
+        }${
+          this.settings.get("character", characters[0]) != characters[0]
+            ? "&character=" + this.settings.get("character", characters[0])
+            : ""
+        }${
+          this.settings.get("expression", expressions[0]) != expressions[0]
+            ? "&expression=" + this.settings.get("expression", expressions[0])
+            : ""
+        }${
+          this.settings.get("url", "") != "" &&
+          this.settings.get("character", characters[0]) == "custom"
+            ? "&url=" + encodeURIComponent(this.settings.get("url", ""))
+            : ""
+        }${
+          this.settings.get("charcolor", colors[0]) != colors[0]
+            ? "&charcolor=" + this.settings.get("charcolor", colors[0])
+            : ""
+        }${
+          this.settings.get("mode", modes[0]) != ""
+            ? "&mode=" + this.settings.get("mode", modes[0])
+            : ""
+        }`,
       }),
     });
 
@@ -145,7 +160,11 @@ module.exports = class UndertaleDialogGenerator extends Plugin {
 
         args[1].content = `https://www.demirramon.com/utgen.png?text=${encodeURIComponent(
           message || "Input a message!"
-        )}&box=${this.settings.get("box", boxes[0])}${
+        )}${
+          this.settings.get("box", boxes[0]) != boxes[0]
+            ? "&box=" + this.settings.get("box", boxes[0])
+            : ""
+        }${
           this.settings.get("boxcolor", colors[0]) != colors[0]
             ? "&boxcolor=" + this.settings.get("boxcolor", colors[0])
             : ""
@@ -153,7 +172,11 @@ module.exports = class UndertaleDialogGenerator extends Plugin {
           this.settings.get("character", characters[0]) != characters[0]
             ? "&character=" + this.settings.get("character", characters[0])
             : ""
-        }&expression=${this.settings.get("expression", expressions[0])}${
+        }${
+          this.settings.get("expression", expressions[0]) != expressions[0]
+            ? "&expression=" + this.settings.get("expression", expressions[0])
+            : ""
+        }${
           this.settings.get("url", "") != "" &&
           this.settings.get("character", characters[0]) == "custom"
             ? "&url=" + encodeURIComponent(this.settings.get("url", ""))
